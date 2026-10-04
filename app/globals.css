@@ -3,66 +3,66 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #fafafa;
-  --foreground: #09090b;
+  --background: #ffffff;
+  --foreground: #2b1e1a;
   
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  --muted: #faf5f2;
+  --muted-foreground: #6a5a55;
   
   --popover: #ffffff;
-  --popover-foreground: #09090b;
+  --popover-foreground: #2b1e1a;
   
   --card: #ffffff;
-  --card-foreground: #09090b;
+  --card-foreground: #2b1e1a;
   
-  --border: #e4e4e7;
-  --input: #e4e4e7;
+  --border: #e8dcd6;
+  --input: #e8dcd6;
   
-  --primary: #09090b;
-  --primary-foreground: #fafafa;
+  --primary: #2b1e1a;
+  --primary-foreground: #ffffff;
   
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
+  --secondary: #faf5f2;
+  --secondary-foreground: #6a5a55;
   
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --accent: #e7c3b5;
+  --accent-foreground: #3b211a;
   
   --destructive: #dc2626;
-  --destructive-foreground: #fafafa;
+  --destructive-foreground: #ffffff;
   
-  --ring: #18181b;
+  --ring: #8c5747;
   --radius: 0.75rem;
 }
 
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --background: #1b1210;
+  --foreground: #f6ece7;
   
-  --muted: #18181b;
-  --muted-foreground: #a1a1aa;
+  --muted: #241915;
+  --muted-foreground: #c2afa8;
   
-  --popover: #09090b;
-  --popover-foreground: #fafafa;
+  --popover: #1b1210;
+  --popover-foreground: #f6ece7;
   
-  --card: #111114;
-  --card-foreground: #fafafa;
+  --card: #241915;
+  --card-foreground: #f6ece7;
   
-  --border: #27272a;
-  --input: #27272a;
+  --border: #3e2e28;
+  --input: #3e2e28;
   
-  --primary: #fafafa;
-  --primary-foreground: #09090b;
+  --primary: #f6ece7;
+  --primary-foreground: #2b1e1a;
   
-  --secondary: #18181b;
-  --secondary-foreground: #fafafa;
+  --secondary: #241915;
+  --secondary-foreground: #c2afa8;
   
-  --accent: #18181b;
-  --accent-foreground: #fafafa;
+  --accent: #e7c3b5;
+  --accent-foreground: #3b211a;
   
   --destructive: #7f1d1d;
-  --destructive-foreground: #fafafa;
+  --destructive-foreground: #f6ece7;
   
-  --ring: #d4d4d8;
+  --ring: #8c5747;
 }
 
 @theme inline {
@@ -92,6 +92,7 @@
   
   --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-mono), monospace;
+  --font-bodoni: var(--font-bodoni), serif;
 }
 
 html {
@@ -107,78 +108,47 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Custom modern scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--background);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--border);
   border-radius: 9999px;
   border: 2px solid var(--background);
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
 }
 
-/* Refined surface utility classes adhering to standard Zinc tokens */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+.section-title-highlight {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-bodoni);
 }
 
-.dark .glass-panel {
-  background: rgba(17, 17, 20, 0.85);
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+.section-title-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 8%;
+  width: 100%;
+  height: 37%;
+  background-color: var(--accent);
+  opacity: 1;
+  z-index: -1;
+  transform: skewX(-4deg);
+  border-radius: 1px;
 }
 
-.glass-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+.dark .section-title-highlight::after {
+  opacity: 0.35;
 }
 
-.glass-card:hover {
-  border-color: #a1a1aa;
-  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.08);
+.hero-text-halo {
+  text-shadow: 0 0 14px var(--background), 0 0 5px var(--background);
 }
 
-.dark .glass-card {
-  background: rgba(17, 17, 20, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-}
-
-.dark .glass-card:hover {
-  background: rgba(24, 24, 28, 0.85);
-  border-color: #3f3f46;
-  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.4);
-}
-
-/* Background subtle mesh grid */
-.grid-mesh {
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-.dark .grid-mesh {
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-  background-size: 48px 48px;
-}

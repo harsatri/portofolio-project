@@ -25,10 +25,11 @@ function applyThemeToDocument(t: Theme) {
 }
 
 function getStoredTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
+  if (typeof window === "undefined") return "light";
   const saved = localStorage.getItem("theme");
   if (saved === "dark" || saved === "light") return saved;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Always default to light mode unless explicitly dark in localStorage.
+  return "light";
 }
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
@@ -36,19 +37,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   React.useEffect(() => {
     applyThemeToDocument(theme);
-
-    const mql = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e: MediaQueryListEvent) => {
-      const saved = localStorage.getItem("theme");
-      if (!saved) {
-        const nextTheme = e.matches ? "dark" : "light";
-        setThemeState(nextTheme);
-        applyThemeToDocument(nextTheme);
-      }
-    };
-
-    mql.addEventListener("change", handler);
-    return () => mql.removeEventListener("change", handler);
+    // Remove matchMedia listeners because we do not respect system preference.
   }, [theme]);
 
   const setTheme = React.useCallback((newTheme: Theme) => {

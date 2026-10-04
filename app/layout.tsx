@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Bodoni_Moda, Jost, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
 import Script from "next/script";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni",
+  subsets: ["latin"],
+  weight: ["500"],
+  display: "swap",
+});
+
+const jost = Jost({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -85,7 +91,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
+      className={`${bodoniModa.variable} ${jost.variable} ${jetbrainsMono.variable} h-full antialiased light`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
@@ -95,14 +101,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                const savedTheme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                  document.documentElement.classList.add('dark');
-                  document.documentElement.classList.remove('light');
-                } else if (savedTheme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                  document.documentElement.classList.add('light');
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme === "dark") {
+                  document.documentElement.classList.add("dark");
+                  document.documentElement.classList.remove("light");
+                } else {
+                  document.documentElement.classList.remove("dark");
+                  document.documentElement.classList.add("light");
                 }
               } catch (_) {}
             `,

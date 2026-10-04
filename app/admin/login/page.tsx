@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
-import { RakaLogo } from "@/components/icons";
+import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Lock, Mail, ArrowRight, Loader2, Eye, EyeOff, ShieldCheck } from "lucide-react";
 import { toast } from "sonner";
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
       {/* Brand & Title */}
       <div className="text-center mb-8">
         <div className="inline-flex p-3 rounded-2xl bg-zinc-900 border border-zinc-800 shadow-lg mb-4">
-          <RakaLogo className="w-10 h-10" />
+          <Logo className="w-auto h-12" theme="dark" alt="Logo Harsa Tri Novenda" />
         </div>
         <h1 className="text-2xl font-bold font-mono tracking-tight text-white">
           Admin Portal

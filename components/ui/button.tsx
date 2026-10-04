@@ -9,15 +9,15 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-zinc-950 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 shadow-sm font-semibold",
+          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm font-semibold",
         destructive:
-          "bg-red-600 text-white shadow-sm hover:bg-red-700 dark:bg-red-500 dark:text-zinc-50 dark:hover:bg-red-600",
+          "bg-red-600 text-white shadow-sm hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600",
         outline:
-          "border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-950/40 shadow-xs hover:bg-zinc-100 dark:hover:bg-zinc-900 text-zinc-900 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white font-medium",
+          "border border-border dark:border-[#3E2E28] bg-card shadow-xs hover:bg-secondary text-foreground dark:text-[#F6ECE7] font-medium",
         secondary:
-          "bg-zinc-100 text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-700 shadow-xs",
-        ghost: "hover:bg-zinc-100 dark:hover:bg-zinc-800/60 text-zinc-800 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-zinc-50",
-        link: "text-zinc-900 dark:text-zinc-200 underline-offset-4 hover:underline",
+          "bg-secondary border border-border dark:border-[#3E2E28] text-foreground dark:text-[#F6ECE7] hover:bg-secondary/80 shadow-xs",
+        ghost: "hover:bg-secondary text-foreground hover:text-foreground",
+        link: "text-foreground underline-offset-4 hover:underline",
       },
       size: {
         default: "h-9 px-4 py-2",

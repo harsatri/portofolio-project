@@ -15,7 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { RakaLogo } from "@/components/icons";
+import { Logo } from "@/components/Logo";
 import { toast } from "sonner";
 
 interface AdminSidebarProps {
@@ -54,10 +54,10 @@ export function AdminSidebar({ mobileOpen, onCloseMobile }: AdminSidebarProps) {
       {/* Brand Header */}
       <div className="h-16 px-6 flex items-center justify-between border-b border-zinc-800">
         <Link href="/admin" className="flex items-center gap-3">
-          <RakaLogo className="w-7 h-7" />
+          <Logo className="w-auto h-7" theme="dark" alt="Logo Harsa Tri Novenda" />
           <div className="flex flex-col">
             <span className="font-mono text-sm font-extrabold text-white tracking-wider">
-              RAKA<span className="text-zinc-500">.ADMIN</span>
+              HARSA<span className="text-zinc-500">.ADMIN</span>
             </span>
             <span className="text-[10px] text-zinc-400 font-mono">CMS & Analytics</span>
           </div>

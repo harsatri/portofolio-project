@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { BookOpen, Trophy, Target, Compass } from "lucide-react";
 import { naturalTransition } from "@/lib/motion";
+import { SectionTitle } from "@/components/ui/section-title";
+
 
 export default function About() {
   return (
@@ -14,19 +16,19 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={naturalTransition}
-            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 font-sans text-xs font-semibold text-zinc-800 dark:text-zinc-300 uppercase tracking-wider mb-3 shadow-2xs"
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-[#8C5747]/20 dark:border-[#E7C3B5]/30 bg-card font-mono text-xs font-semibold text-[#8C5747] dark:text-[#E7C3B5] uppercase tracking-[0.08em] mb-3 shadow-2xs"
           >
             About Me
           </motion.div>
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ ...naturalTransition, delay: 0.08 }}
-            className="text-3xl sm:text-4xl font-extrabold text-zinc-950 dark:text-white tracking-tight"
+            className="inline-block"
           >
-            Behind the Code
-          </motion.h2>
+            <SectionTitle>Behind the Code</SectionTitle>
+          </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -36,33 +38,33 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={naturalTransition}
-            className="lg:col-span-8 rounded-2xl p-7 sm:p-8 flex flex-col justify-between border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
+            className="lg:col-span-8 rounded-2xl p-7 sm:p-8 flex flex-col justify-between border border-border bg-card shadow-xs hover:border-border  transition-colors"
           >
             <div>
-              <h3 className="text-xl font-bold text-zinc-950 dark:text-white mb-4 flex items-center gap-2.5">
-                <Compass className="w-5 h-5 text-zinc-500 dark:text-zinc-400" />
+              <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-2.5">
+                <Compass className="w-5 h-5 text-muted-foreground" />
                 My Journey
               </h3>
-              <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6 font-normal">
+              <p className="text-muted-foreground leading-relaxed mb-6 font-normal">
                 I am a passionate Full-Stack Web Developer and an Information Systems student (S1 Sistem Informasi) at Telkom University. My journey in technology is driven by a deep curiosity for system design and a focus on developing scalable frontend and backend web applications. I enjoy building efficient systems, integrating AI solutions, and constantly adapting to cutting-edge technologies.
               </p>
-              <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+              <p className="text-muted-foreground leading-relaxed font-normal">
                 With academic training in Software Engineering, Database Systems, OOP, and System Analysis & Design, I prioritize structural reliability, clean code, and intuitive user experiences.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-8 pt-6 border-t border-border">
               <div>
-                <p className="text-3xl font-extrabold text-zinc-950 dark:text-white">3+</p>
-                <p className="text-xs font-sans text-zinc-500 dark:text-zinc-400 uppercase font-semibold tracking-wider mt-1">Years Experience</p>
+                <p className="text-3xl font-extrabold text-foreground">3+</p>
+                <p className="text-xs font-sans text-muted-foreground uppercase font-semibold tracking-wider mt-1">Years Experience</p>
               </div>
               <div>
-                <p className="text-3xl font-extrabold text-zinc-950 dark:text-white">10+</p>
-                <p className="text-xs font-sans text-zinc-500 dark:text-zinc-400 uppercase font-semibold tracking-wider mt-1">Built Projects</p>
+                <p className="text-3xl font-extrabold text-foreground">10+</p>
+                <p className="text-xs font-sans text-muted-foreground uppercase font-semibold tracking-wider mt-1">Built Projects</p>
               </div>
               <div>
-                <p className="text-3xl font-extrabold text-zinc-950 dark:text-white">3.84</p>
-                <p className="text-xs font-sans text-zinc-500 dark:text-zinc-400 uppercase font-semibold tracking-wider mt-1">Academic GPA</p>
+                <p className="text-3xl font-extrabold text-foreground">3.84</p>
+                <p className="text-xs font-sans text-muted-foreground uppercase font-semibold tracking-wider mt-1">Academic GPA</p>
               </div>
             </div>
           </motion.div>
@@ -75,19 +77,19 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ...naturalTransition, delay: 0.1 }}
-              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
+              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-border bg-card shadow-xs hover:border-border  transition-colors"
             >
               <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 shadow-2xs">
+                <div className="p-1.5 rounded-lg bg-secondary border border-border text-muted-foreground shadow-2xs">
                   <BookOpen className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-sm text-zinc-950 dark:text-white">Education</h4>
+                <h4 className="font-bold text-sm text-foreground">Education</h4>
               </div>
               <div>
-                <p className="font-bold text-sm text-zinc-950 dark:text-zinc-200">S1 Sistem Informasi</p>
-                <p className="text-xs text-zinc-600 dark:text-zinc-400 mt-0.5 font-medium">Telkom University</p>
-                <div className="flex items-center gap-3 mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">
-                  <span className="font-semibold text-zinc-700 dark:text-zinc-300 font-mono">GPA: 3.84 / 4.00</span>
+                <p className="font-bold text-sm text-foreground ">S1 Sistem Informasi</p>
+                <p className="text-xs text-muted-foreground mt-0.5 font-medium">Telkom University</p>
+                <div className="flex items-center gap-3 mt-1.5 text-xs text-muted-foreground">
+                  <span className="font-semibold text-muted-foreground font-mono">GPA: 3.84 / 4.00</span>
                   <span>•</span>
                   <span className="font-mono">2022 – 2026</span>
                 </div>
@@ -100,15 +102,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ...naturalTransition, delay: 0.18 }}
-              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
+              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-border bg-card shadow-xs hover:border-border  transition-colors"
             >
               <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 shadow-2xs">
+                <div className="p-1.5 rounded-lg bg-secondary border border-border text-muted-foreground shadow-2xs">
                   <Target className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-sm text-zinc-950 dark:text-white">Career Objective</h4>
+                <h4 className="font-bold text-sm text-foreground">Career Objective</h4>
               </div>
-              <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
                 To engineer scalable full-stack web architectures, optimizing data-intensive backends, and delivering frictionless user interfaces for real-world enterprise applications.
               </p>
             </motion.div>
@@ -119,15 +121,15 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ ...naturalTransition, delay: 0.24 }}
-              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
+              className="rounded-2xl p-5 flex-1 flex flex-col justify-center gap-2.5 border border-border bg-card shadow-xs hover:border-border  transition-colors"
             >
               <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 shadow-2xs">
+                <div className="p-1.5 rounded-lg bg-secondary border border-border text-muted-foreground shadow-2xs">
                   <Trophy className="w-4 h-4" />
                 </div>
-                <h4 className="font-bold text-sm text-zinc-950 dark:text-white">Current Focus</h4>
+                <h4 className="font-bold text-sm text-foreground">Current Focus</h4>
               </div>
-              <p className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
                 Focusing on full-stack web architectures, optimizing database performance, and integrating secure payment processing and AI technologies.
               </p>
             </motion.div>

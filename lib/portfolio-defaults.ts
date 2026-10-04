@@ -182,7 +182,7 @@ export const DEFAULT_PROFILE: ProfileData = {
   role: "Full-Stack Web Developer",
   tagline:
     "Lulusan S1 Sistem Informasi dari Universitas Telkom (menunggu wisuda) dengan fokus pada pengembangan web dan sistem secara full-stack. Berpengalaman membangun aplikasi berbasis web, mencakup pengembangan frontend dan backend, manajemen basis data, integrasi REST API, serta perancangan sistem. Memiliki pengalaman tambahan dalam pengembangan machine learning menggunakan Python dan Scikit-learn.",
-  avatar_url: "/profile.jpg",
+  avatar_url: "/hero-cutout.png",
   avatar_position: "55% 20%",
   avatar_scale: 100,
   avatar_offset_y: 0,

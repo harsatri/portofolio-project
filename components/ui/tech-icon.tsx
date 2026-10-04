@@ -281,7 +281,7 @@ export function TechIcon({
     return (
       <span
         className={cn(
-          "inline-flex items-center justify-center shrink-0 text-zinc-400 dark:text-zinc-400 group-hover:text-zinc-950 dark:group-hover:text-zinc-100 transition-colors duration-200",
+          "inline-flex items-center justify-center shrink-0 text-muted-foreground group-hover:text-foreground dark:group-hover:text-foreground transition-colors duration-200",
           className
         )}
         title={name}
@@ -305,7 +305,7 @@ export function TechIcon({
       {...props}
     >
       <span
-        className="inline-flex items-center justify-center font-mono text-[9px] font-bold tracking-tight uppercase bg-zinc-800 border border-zinc-700 text-zinc-300 rounded px-1 min-w-[20px] h-4.5 select-none leading-none group-hover:border-zinc-500 group-hover:text-white transition-colors duration-200"
+        className="inline-flex items-center justify-center font-mono text-[9px] font-bold tracking-tight uppercase bg-secondary border border-border text-muted-foreground rounded px-1 min-w-[20px] h-4.5 select-none leading-none group-hover:border-ring group-hover:text-foreground transition-colors duration-200"
         aria-hidden="true"
       >
         {monogram}

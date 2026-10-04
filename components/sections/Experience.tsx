@@ -29,6 +29,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { getTechLogo } from "@/components/icons";
+import { SectionTitle } from "@/components/ui/section-title";
+
 
 interface ExperienceItem {
   id?: string;
@@ -102,7 +104,7 @@ function renderTypeBadge(type: string) {
     );
   }
   return (
-    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-sans font-semibold bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-200 border border-zinc-200 dark:border-zinc-700 shadow-2xs">
+    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-sans font-semibold bg-secondary  text-foreground  border border-border  shadow-2xs">
       {type}
     </span>
   );
@@ -139,14 +141,14 @@ export default function Experience({
           <div className="flex flex-col items-center text-center mb-16">
             <Badge
               variant="outline"
-              className="mb-3 px-3.5 py-1 font-sans text-xs font-semibold text-zinc-800 dark:text-zinc-300 border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs"
+              className="mb-3 px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#8C5747] dark:text-[#E7C3B5] border-[#8C5747]/20 dark:border-[#E7C3B5]/30 bg-card shadow-2xs"
             >
               Career & Trajectory
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
-              Professional Experience
-            </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm max-w-lg mt-3">
+            <SectionTitle>
+            Professional Experience
+          </SectionTitle>
+            <p className="text-muted-foreground text-sm max-w-lg mt-3">
               Hands-on engineering roles in enterprise web applications, real-time logistics systems, and technical mentorship.
             </p>
           </div>
@@ -174,7 +176,7 @@ export default function Experience({
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   className="relative group"
                 >
-                  <Card className="rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md">
+                  <Card className="rounded-2xl border border-border bg-card hover:border-border  transition-all duration-300 overflow-hidden shadow-xs hover:shadow-md">
                     {/* Top Status Border Accent */}
                     {isCurrent && (
                       <div className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500" />
@@ -185,7 +187,7 @@ export default function Experience({
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
                         <div>
                           <div className="flex flex-wrap items-center gap-2.5 mb-1.5">
-                            <span className="text-xl sm:text-2xl font-bold text-zinc-950 dark:text-white tracking-tight">
+                            <span className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
                               {exp.company}
                             </span>
                             {renderTypeBadge(exp.type)}
@@ -196,30 +198,30 @@ export default function Experience({
                               </span>
                             )}
                           </div>
-                          <p className="text-base font-semibold text-zinc-700 dark:text-zinc-300">
+                          <p className="text-base font-semibold text-muted-foreground">
                             {exp.role}
                           </p>
                         </div>
 
                         {/* Duration Pill */}
-                        <div className="inline-flex items-center self-start sm:self-auto gap-1.5 px-3.5 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-sans text-zinc-600 dark:text-zinc-400 font-medium shrink-0">
-                          <Calendar className="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400" />
+                        <div className="inline-flex items-center self-start sm:self-auto gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary border border-border text-xs font-sans text-muted-foreground font-medium shrink-0">
+                          <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
                           <span>{exp.duration}</span>
                         </div>
                       </div>
 
                       {/* Highlight Description */}
-                      <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+                      <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6 font-normal">
                         {exp.highlights}
                       </p>
 
                       {/* Key Metrics Bento row */}
                       {exp.metrics && exp.metrics.length > 0 && (
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 p-3.5 sm:p-4 rounded-xl bg-zinc-50/90 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80 shadow-2xs">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 p-3.5 sm:p-4 rounded-xl bg-secondary border border-border shadow-2xs">
                           {exp.metrics.map((m, i) => (
                             <div key={i}>
-                              <p className="text-xs font-sans text-zinc-500 dark:text-zinc-400 uppercase font-semibold tracking-wider">{m.label}</p>
-                              <p className="text-sm sm:text-base font-extrabold text-zinc-950 dark:text-zinc-100 mt-0.5">{m.value}</p>
+                              <p className="text-xs font-sans text-muted-foreground uppercase font-semibold tracking-wider">{m.label}</p>
+                              <p className="text-sm sm:text-base font-extrabold text-foreground mt-0.5">{m.value}</p>
                             </div>
                           ))}
                         </div>
@@ -227,13 +229,13 @@ export default function Experience({
 
                       {/* Authentic Photo Documentation Showcase (Stock photos automatically excluded) */}
                       {authenticPhotos.length > 0 && (
-                        <div className="mb-6 space-y-2.5 p-3.5 rounded-xl bg-zinc-50/80 dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80">
+                        <div className="mb-6 space-y-2.5 p-3.5 rounded-xl bg-secondary border border-border">
                           <div className="flex items-center justify-between text-xs font-sans">
-                            <span className="flex items-center gap-1.5 text-zinc-800 dark:text-zinc-200 font-bold uppercase tracking-wider">
-                              <ImageIcon className="w-3.5 h-3.5 text-zinc-600 dark:text-zinc-400" />
+                            <span className="flex items-center gap-1.5 text-foreground font-bold uppercase tracking-wider">
+                              <ImageIcon className="w-3.5 h-3.5 text-muted-foreground" />
                               Dokumentasi Kegiatan & Sistem ({authenticPhotos.length})
                             </span>
-                            <span className="text-[11px] text-zinc-500 dark:text-zinc-400 font-medium">
+                            <span className="text-[11px] text-muted-foreground font-medium">
                               Klik foto untuk perbesar
                             </span>
                           </div>
@@ -250,7 +252,7 @@ export default function Experience({
                                     index: photoIdx,
                                   })
                                 }
-                                className="group relative aspect-video w-full rounded-lg overflow-hidden bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 transition-all duration-200 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-zinc-400"
+                                className="group relative aspect-video w-full rounded-lg overflow-hidden bg-secondary border border-border hover:border-ring transition-all duration-200 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-ring"
                                 title={`Lihat Foto ${photoIdx + 1} - ${exp.company}`}
                               >
                                 <Image
@@ -284,17 +286,17 @@ export default function Experience({
                                   tabIndex={0}
                                   role="button"
                                   aria-label={tech}
-                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-100/90 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors cursor-default shadow-2xs"
+                                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-secondary border border-border hover:border-border  transition-colors cursor-default shadow-2xs"
                                 >
                                   <div className="w-4 h-4 flex items-center justify-center shrink-0">
                                     {logo}
                                   </div>
-                                  <span className="text-xs font-medium text-zinc-700 dark:text-zinc-300 font-sans">
+                                  <span className="text-xs font-medium text-muted-foreground font-sans">
                                     {tech}
                                   </span>
                                 </div>
                               </TooltipTrigger>
-                              <TooltipContent side="top" className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1 text-xs font-sans text-zinc-950 dark:text-white shadow-md">
+                              <TooltipContent side="top" className="border-border bg-card px-2.5 py-1 text-xs font-sans text-foreground shadow-md">
                                 {tech}
                               </TooltipContent>
                             </Tooltip>
@@ -303,15 +305,15 @@ export default function Experience({
                       </div>
 
                       {/* Drawer Toggle Button */}
-                      <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800/80 flex items-center justify-between">
-                        <span className="text-xs font-sans text-zinc-600 dark:text-zinc-400 font-medium">
+                      <div className="pt-4 border-t border-border flex items-center justify-between">
+                        <span className="text-xs font-sans text-muted-foreground font-medium">
                           {isExpanded ? "Hide key deliverables" : "View deliverables & technical scope"}
                         </span>
                         <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => toggleExpand(index)}
-                          className="text-xs font-sans text-zinc-900 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white gap-1.5 cursor-pointer font-semibold"
+                          className="text-xs font-sans text-foreground  hover:text-foreground  gap-1.5 cursor-pointer font-semibold"
                         >
                           {isExpanded ? (
                             <>
@@ -337,11 +339,11 @@ export default function Experience({
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden pt-4 mt-2"
                           >
-                            <div className="p-4 sm:p-5 rounded-xl bg-zinc-50/90 dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/80 space-y-3 shadow-2xs">
-                              <p className="text-xs font-sans text-zinc-700 dark:text-zinc-300 uppercase tracking-wider mb-2 font-bold">
+                            <div className="p-4 sm:p-5 rounded-xl bg-secondary border border-border space-y-3 shadow-2xs">
+                              <p className="text-xs font-sans text-muted-foreground uppercase tracking-wider mb-2 font-bold">
                                 Key Technical Deliverables & Architecture:
                               </p>
-                              <ul className="space-y-2.5 text-zinc-800 dark:text-zinc-200 text-xs sm:text-sm font-normal">
+                              <ul className="space-y-2.5 text-foreground text-xs sm:text-sm font-normal">
                                 {exp.deliverables.map((item, idx) => (
                                   <li key={idx} className="flex items-start gap-2.5 leading-relaxed">
                                     <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
@@ -366,11 +368,11 @@ export default function Experience({
           open={!!activeGallery}
           onOpenChange={(open) => !open && setActiveGallery(null)}
         >
-          <DialogContent className="max-w-4xl p-3 bg-black/95 border-zinc-800 text-white">
-            <DialogTitle className="text-sm font-mono text-zinc-300 px-2 pt-1 flex items-center justify-between">
+          <DialogContent className="max-w-4xl p-3 bg-black/95 border-border text-white">
+            <DialogTitle className="text-sm font-mono text-muted-foreground px-2 pt-1 flex items-center justify-between">
               <span className="truncate max-w-[75%]">{activeGallery?.title}</span>
               {activeGallery && activeGallery.photos.length > 1 && (
-                <span className="text-xs text-zinc-400 font-mono">
+                <span className="text-xs text-muted-foreground font-mono">
                   {activeGallery.index + 1} / {activeGallery.photos.length}
                 </span>
               )}

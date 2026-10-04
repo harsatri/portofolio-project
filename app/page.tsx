@@ -29,7 +29,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-zinc-200 selection:text-zinc-950 dark:selection:bg-zinc-800 dark:selection:text-white transition-colors duration-300">
+    <main className="min-h-screen bg-background text-foreground selection:bg-accent/40 selection:text-foreground dark:selection:bg-accent/30 dark:selection:text-foreground transition-colors duration-300">
       <Navbar />
       <Hero initialProfile={profile} />
       <About />

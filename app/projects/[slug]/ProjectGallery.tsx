@@ -38,7 +38,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
       {/* Featured Large Viewport */}
       <div
         onClick={() => setLightboxOpen(true)}
-        className="group relative aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 border border-zinc-200 dark:border-zinc-800 shadow-xl cursor-zoom-in"
+        className="group relative aspect-video w-full rounded-2xl overflow-hidden bg-zinc-950 border border-border shadow-xl cursor-zoom-in"
       >
         <AnimatePresence mode="wait">
           <motion.div
@@ -116,7 +116,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
               className={`relative aspect-video w-24 sm:w-28 rounded-xl overflow-hidden border-2 transition-all cursor-pointer shrink-0 ${
                 activeIndex === idx
                   ? "border-blue-500 shadow-md scale-105"
-                  : "border-zinc-200 dark:border-zinc-800 opacity-60 hover:opacity-100"
+                  : "border-border opacity-60 hover:opacity-100"
               }`}
             >
               <Image
@@ -133,7 +133,7 @@ export function ProjectGallery({ images, title }: ProjectGalleryProps) {
 
       {/* Lightbox Modal */}
       <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-5xl p-2 bg-black/95 border-zinc-800">
+        <DialogContent className="max-w-5xl p-2 bg-black/95 border-border">
           <DialogTitle className="sr-only">{title} Screenshot</DialogTitle>
           <div className="relative aspect-video w-full rounded-xl overflow-hidden">
             <Image

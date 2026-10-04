@@ -17,7 +17,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
 
   if (!isMounted) {
     return (
-      <div className={`w-9 h-9 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 ${className}`} />
+      <div className={`w-9 h-9 rounded-full border border-border bg-secondary ${className}`} />
     );
   }
 
@@ -28,7 +28,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       onClick={toggleTheme}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}
-      className={`relative p-2 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 hover:bg-zinc-200/80 dark:bg-zinc-900/80 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 cursor-pointer shadow-xs ${className}`}
+      className={`relative p-2 rounded-full border border-border bg-secondary hover:bg-secondary/80   text-muted-foreground hover:text-foreground  transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 cursor-pointer shadow-xs ${className}`}
     >
       <AnimatePresence mode="wait" initial={false}>
         {isDark ? (
@@ -39,7 +39,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
             exit={{ scale: 0.6, rotate: 90, opacity: 0 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Moon className="w-4 h-4 text-zinc-300 dark:text-zinc-200" />
+            <Moon className="w-4 h-4 text-muted-foreground " />
           </motion.div>
         ) : (
           <motion.div
@@ -49,7 +49,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
             exit={{ scale: 0.6, rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Sun className="w-4 h-4 text-zinc-700 dark:text-zinc-300" />
+            <Sun className="w-4 h-4 text-muted-foreground" />
           </motion.div>
         )}
       </AnimatePresence>

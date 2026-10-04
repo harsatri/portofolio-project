@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
+import { SectionTitle } from "@/components/ui/section-title";
+
 
 interface Certificate {
   title: string;
@@ -42,20 +44,20 @@ export default function Certificates({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3"
+            className="mb-3 px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#8C5747] dark:text-[#E7C3B5] border border-[#8C5747]/20 dark:border-[#E7C3B5]/30 bg-card rounded-full shadow-2xs inline-flex items-center"
           >
             Credentials
           </motion.div>
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl sm:text-4xl font-extrabold text-zinc-950 dark:text-white tracking-tight"
+            className="inline-block"
           >
-            Certificates & Accreditation
-          </motion.h2>
-          <p className="text-zinc-700 dark:text-zinc-300 text-sm max-w-md mt-3">
+            <SectionTitle>Certificates & Accreditation</SectionTitle>
+          </motion.div>
+          <p className="text-muted-foreground text-sm max-w-md mt-3">
             Officially verified professional certifications and national competency accreditations.
           </p>
         </div>
@@ -69,27 +71,27 @@ export default function Certificates({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md rounded-2xl p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden bg-white dark:bg-zinc-950/80 border border-zinc-300 dark:border-zinc-800 hover:border-zinc-500 dark:hover:border-zinc-650 shadow-sm hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300"
+              className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-md rounded-2xl p-6 sm:p-7 flex flex-col justify-between group relative overflow-hidden bg-card border border-border hover:border-zinc-500  shadow-sm hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300"
             >
               <div>
                 {/* Header: Icon + Official Credential Seal */}
                 <div className="flex items-start justify-between gap-4 mb-6">
-                  <div className="p-3 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors">
+                  <div className="p-3 rounded-xl bg-secondary border border-border text-foreground transition-colors">
                     <Award className="w-6 h-6" />
                   </div>
 
                   {/* Authentic, Clean Official Accreditation Badge (Non-AI Style) */}
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800/80 text-[11px] font-bold text-emerald-850 dark:text-emerald-400 shadow-2xs">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800/80 text-[11px] font-bold text-emerald-800 dark:text-emerald-400 shadow-2xs">
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
                     <span className="font-sans tracking-tight">Verified • BNSP RI</span>
                   </div>
                 </div>
 
-                <h3 className="font-extrabold text-zinc-950 dark:text-white text-base leading-snug mb-2 group-hover:text-blue-600 dark:group-hover:text-zinc-200 transition-colors">
+                <h3 className="font-extrabold text-foreground text-base leading-snug mb-2 group-hover:text-muted-foreground transition-colors">
                   {cert.title}
                 </h3>
-                <p className="text-zinc-800 dark:text-zinc-300 font-semibold text-xs mb-1">{cert.issuer}</p>
-                <div className="flex items-center gap-2 text-[10px] font-mono text-zinc-600 dark:text-zinc-400">
+                <p className="text-foreground font-semibold text-xs mb-1">{cert.issuer}</p>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-muted-foreground">
                   <span>Issued: {cert.date}</span>
                   {cert.credentialId && (
                     <>
@@ -100,12 +102,12 @@ export default function Certificates({
                 </div>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-zinc-200 dark:border-zinc-850">
+              <div className="mt-8 pt-4 border-t border-border ">
                 <div className="flex flex-wrap gap-1.5 mb-5">
                   {cert.skillsVerified.map((skill) => (
                     <span
                       key={skill}
-                      className="text-[10px] font-mono text-zinc-800 dark:text-zinc-300 bg-zinc-100 dark:bg-zinc-900 px-2.5 py-0.5 rounded-md border border-zinc-300 dark:border-zinc-800 font-medium"
+                      className="text-[10px] font-mono text-foreground bg-secondary px-2.5 py-0.5 rounded-md border border-border font-medium"
                     >
                       {skill}
                     </span>
@@ -116,7 +118,7 @@ export default function Certificates({
                   href={cert.credentialUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 dark:text-white hover:text-blue-600 dark:hover:text-zinc-300 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground hover:text-muted-foreground transition-colors"
                 >
                   View Credential
                   <ExternalLink className="w-3.5 h-3.5" />

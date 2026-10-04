@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { RakaLogo } from "@/components/icons";
+import { Logo } from "@/components/Logo";
 
 const NAV_ITEMS = [
   { label: "Home", href: "#home" },
@@ -54,18 +55,22 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3.5 bg-white/90 dark:bg-zinc-950/90 backdrop-blur-xl border-b border-zinc-300 dark:border-zinc-800/80 shadow-md shadow-zinc-200/50 dark:shadow-black/40"
+          ? "py-3.5 bg-card backdrop-blur-xl border-b border-border shadow-md shadow-zinc-200/50 dark:shadow-black/40"
           : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#home" className="flex items-center gap-2 group" aria-label="Harsa Dev">
-          <RakaLogo className="w-8 h-8 sm:w-9 sm:h-9 group-hover:scale-105 transition-transform" />
-        </a>
+        <Link
+          href="/"
+          className="flex items-center justify-center min-w-[40px] min-h-[40px] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-transform duration-200 motion-safe:hover:scale-105"
+          aria-label="Beranda"
+        >
+          <Logo className="h-9 sm:h-10 w-auto" alt="Logo Harsa Tri Novenda" />
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-1 bg-zinc-100/90 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 rounded-full px-2 py-1 backdrop-blur-md shadow-2xs">
+        <nav className="hidden lg:flex items-center gap-1 bg-secondary border border-border rounded-full px-2 py-1 backdrop-blur-md shadow-2xs">
           {NAV_ITEMS.map((item) => {
             const id = item.href.substring(1);
             const isActive = activeSection === id;
@@ -74,16 +79,16 @@ export default function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`relative px-3.5 py-1.5 text-xs font-sans font-medium tracking-tight rounded-full transition-colors duration-200 ${
+                className={`relative px-3.5 py-1.5 text-xs font-sans tracking-tight rounded-full transition-colors duration-200 ${
                   isActive
-                    ? "text-zinc-950 dark:text-white font-semibold"
-                    : "text-zinc-700 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                    ? "text-primary-foreground font-semibold"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {isActive && (
                   <motion.span
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-white dark:bg-zinc-800 border border-zinc-300 dark:border-zinc-700/80 rounded-full -z-10 shadow-xs"
+                    className="absolute inset-0 bg-primary rounded-full -z-10 shadow-xs"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -100,7 +105,7 @@ export default function Navbar() {
           <Button
             asChild
             size="sm"
-            className="rounded-full bg-zinc-950 text-white hover:bg-zinc-850 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 font-semibold px-4.5 h-9 shadow-xs text-xs cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            className="rounded-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold px-4.5 h-9 shadow-xs text-xs cursor-pointer hover:-translate-y-0.5 transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)]"
           >
             <a href="#contact">
               Let&apos;s Talk
@@ -114,7 +119,7 @@ export default function Navbar() {
           <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer shadow-2xs"
+            className="p-2 rounded-lg bg-secondary border border-border text-foreground hover:text-foreground transition-colors cursor-pointer shadow-2xs"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -130,14 +135,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-white/95 dark:bg-zinc-950/95 border-b border-zinc-300 dark:border-zinc-800 px-6 py-6 lg:hidden flex flex-col gap-3 backdrop-blur-2xl shadow-xl"
+            className="absolute top-full left-0 right-0 bg-card border-b border-border px-6 py-6 lg:hidden flex flex-col gap-3 backdrop-blur-2xl shadow-xl"
           >
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-sans font-medium text-zinc-800 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white py-2 border-b border-zinc-200 dark:border-zinc-900 transition-colors"
+                className="text-sm font-sans font-medium text-foreground hover:text-foreground py-2 border-b border-border transition-colors"
               >
                 {item.label}
               </a>
@@ -146,7 +151,7 @@ export default function Navbar() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full rounded-xl border border-zinc-300 dark:border-zinc-750 bg-zinc-100 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-800 h-11 justify-center gap-2 font-semibold"
+                className="w-full rounded-xl border border-border dark:border-[#3E2E28] bg-secondary text-foreground dark:text-[#F6ECE7] hover:bg-secondary/80 h-11 justify-center gap-2 font-semibold"
               >
                 <a
                   href="/cv.pdf"
@@ -162,7 +167,7 @@ export default function Navbar() {
 
               <Button
                 asChild
-                className="w-full rounded-xl bg-zinc-950 text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200 font-semibold h-11 justify-center"
+                className="w-full rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold h-11 justify-center"
               >
                 <a href="#contact" onClick={() => setMobileMenuOpen(false)}>
                   Let&apos;s Talk

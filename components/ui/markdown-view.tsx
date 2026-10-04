@@ -24,7 +24,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
       elements.push(
         <ul key={`list-${elements.length}`} className="my-3 space-y-2 pl-2">
           {listBuffer.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-2.5 text-zinc-300 text-sm leading-relaxed">
+            <li key={idx} className="flex items-start gap-2.5 text-muted-foreground text-sm leading-relaxed">
               <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0" />
               <span>{formatInline(item)}</span>
             </li>
@@ -86,7 +86,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
       elements.push(
         <h3
           key={`h3-${elements.length}`}
-          className="text-lg font-bold text-zinc-950 dark:text-white mt-6 mb-2 tracking-tight flex items-center gap-2"
+          className="text-lg font-bold text-foreground mt-6 mb-2 tracking-tight flex items-center gap-2"
         >
           <span className="w-2 h-2 rounded-sm bg-purple-500 inline-block" />
           {formatInline(line.substring(4))}
@@ -99,7 +99,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
       elements.push(
         <h2
           key={`h2-${elements.length}`}
-          className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white mt-8 mb-3 tracking-tight border-b border-zinc-200 dark:border-zinc-800/80 pb-2"
+          className="text-xl sm:text-2xl font-extrabold text-foreground mt-8 mb-3 tracking-tight border-b border-border pb-2"
         >
           {formatInline(line.substring(3))}
         </h2>
@@ -111,7 +111,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
       elements.push(
         <h1
           key={`h1-${elements.length}`}
-          className="text-2xl sm:text-3xl font-black text-zinc-950 dark:text-white mt-8 mb-4 tracking-tight"
+          className="text-2xl sm:text-3xl font-black text-foreground mt-8 mb-4 tracking-tight"
         >
           {formatInline(line.substring(2))}
         </h1>
@@ -124,7 +124,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
       elements.push(
         <blockquote
           key={`quote-${elements.length}`}
-          className="my-3 border-l-2 border-blue-500 bg-blue-50/60 dark:bg-blue-950/20 px-4 py-2.5 rounded-r-lg text-sm text-zinc-700 dark:text-zinc-300 italic"
+          className="my-3 border-l-2 border-blue-500 bg-blue-50/60 dark:bg-blue-950/20 px-4 py-2.5 rounded-r-lg text-sm text-muted-foreground italic"
         >
           {formatInline(line.substring(2))}
         </blockquote>
@@ -141,7 +141,7 @@ export function MarkdownView({ content, className = "" }: MarkdownViewProps) {
     elements.push(
       <p
         key={`p-${elements.length}`}
-        className="my-3 text-sm sm:text-base text-zinc-700 dark:text-zinc-300 leading-relaxed font-normal"
+        className="my-3 text-sm sm:text-base text-muted-foreground leading-relaxed font-normal"
       >
         {formatInline(line)}
       </p>
@@ -168,7 +168,7 @@ function formatInline(text: string): React.ReactNode {
     const token = match[0];
     if (token.startsWith("**") && token.endsWith("**")) {
       tokens.push(
-        <strong key={match.index} className="font-bold text-zinc-950 dark:text-white">
+        <strong key={match.index} className="font-bold text-foreground">
           {token.slice(2, -2)}
         </strong>
       );
@@ -176,7 +176,7 @@ function formatInline(text: string): React.ReactNode {
       tokens.push(
         <code
           key={match.index}
-          className="px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800/90 text-blue-700 dark:text-blue-300 font-mono text-xs border border-zinc-200 dark:border-zinc-700/50"
+          className="px-1.5 py-0.5 rounded bg-secondary  text-blue-700 dark:text-blue-300 font-mono text-xs border border-border "
         >
           {token.slice(1, -1)}
         </code>
@@ -216,8 +216,8 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
   };
 
   return (
-    <div className="my-4 rounded-xl overflow-hidden border border-zinc-800 bg-zinc-950/90 shadow-lg">
-      <div className="flex items-center justify-between px-4 py-2 bg-zinc-900/80 border-b border-zinc-800 text-xs font-mono text-zinc-400">
+    <div className="my-4 rounded-xl overflow-hidden border border-border bg-zinc-950/90 shadow-lg">
+      <div className="flex items-center justify-between px-4 py-2 bg-secondary border-b border-border text-xs font-mono text-muted-foreground">
         <div className="flex items-center gap-2">
           <Terminal className="w-3.5 h-3.5 text-blue-400" />
           <span>{language || "code"}</span>
@@ -225,7 +225,7 @@ function CodeBlock({ code, language }: { code: string; language: string }) {
         <button
           type="button"
           onClick={handleCopy}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-white transition-colors cursor-pointer text-[11px]"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-secondary hover:bg-zinc-700 text-muted-foreground hover:text-white transition-colors cursor-pointer text-[11px]"
         >
           {copied ? (
             <>

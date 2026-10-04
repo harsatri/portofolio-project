@@ -24,7 +24,7 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
 
       <div className="relative z-10 max-w-xl w-full text-center">
         {/* Bento Error Card */}
-        <div className="rounded-3xl border border-red-500/20 dark:border-red-900/40 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-xl p-8 sm:p-12 shadow-2xl space-y-6">
+        <div className="rounded-3xl border border-red-500/20 dark:border-red-900/40 bg-card backdrop-blur-xl p-8 sm:p-12 shadow-2xl space-y-6">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-red-500/30 bg-red-500/10 text-red-600 dark:text-red-400 font-mono text-xs font-semibold tracking-wider">
             <span className="relative flex h-2 w-2">
@@ -43,21 +43,21 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
 
           {/* Heading and Description */}
           <div className="space-y-2.5">
-            <h1 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-zinc-900 dark:text-white">
+            <h1 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-foreground">
               Terjadi Kendala Teknis
             </h1>
-            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 font-sans leading-relaxed max-w-md mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground font-sans leading-relaxed max-w-md mx-auto">
               Aplikasi mengalami kesalahan tak terduga saat memproses halaman ini. Silakan coba muat ulang atau kembali ke beranda.
             </p>
           </div>
 
           {/* Diagnostics Panel */}
-          <div className="rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/90 dark:bg-zinc-950/80 p-3.5 text-left font-mono text-[11px] text-zinc-600 dark:text-zinc-400 space-y-1.5">
-            <div className="flex items-center gap-1.5 text-zinc-500 text-[10px]">
+          <div className="rounded-xl border border-border bg-secondary p-3.5 text-left font-mono text-[11px] text-muted-foreground space-y-1.5">
+            <div className="flex items-center gap-1.5 text-muted-foreground text-[10px]">
               <Terminal className="w-3.5 h-3.5 text-red-400" />
               <span>DIAGNOSTIC LOG</span>
               {error.digest && (
-                <span className="ml-auto text-zinc-500">ID: {error.digest}</span>
+                <span className="ml-auto text-muted-foreground">ID: {error.digest}</span>
               )}
             </div>
             <p className="text-red-500 dark:text-red-400 font-medium break-all pt-1">
@@ -69,7 +69,7 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
           <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Button
               onClick={() => reset()}
-              className="w-full sm:w-auto rounded-xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 font-medium font-sans h-10 px-5 gap-2 shadow-md cursor-pointer"
+              className="w-full sm:w-auto rounded-xl bg-secondary  text-white  hover:bg-secondary  font-medium font-sans h-10 px-5 gap-2 shadow-md cursor-pointer"
             >
               <RotateCcw className="w-4 h-4" />
               <span>Coba Lagi</span>
@@ -78,7 +78,7 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
             <Button
               asChild
               variant="outline"
-              className="w-full sm:w-auto rounded-xl border-zinc-300 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-300 font-medium font-sans h-10 px-5 gap-2"
+              className="w-full sm:w-auto rounded-xl border-border bg-card hover:bg-secondary  text-zinc-800 font-medium font-sans h-10 px-5 gap-2"
             >
               <Link href="/">
                 <Home className="w-4 h-4 text-blue-500 dark:text-blue-400" />

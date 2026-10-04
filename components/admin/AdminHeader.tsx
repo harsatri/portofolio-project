@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, RefreshCw, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { Logo } from "@/components/Logo";
 import { triggerRevalidation } from "@/lib/revalidate";
 import { toast } from "sonner";
 
@@ -38,7 +40,7 @@ export function AdminHeader({
 
   return (
     <header className="h-16 px-4 sm:px-6 bg-zinc-900 border-b border-zinc-800 flex items-center justify-between text-zinc-100 shrink-0">
-      {/* Left: Mobile Toggle & Page Title */}
+      {/* Left: Mobile Toggle, Logo & Page Title */}
       <div className="flex items-center gap-3">
         <button
           onClick={onOpenMobileSidebar}
@@ -47,6 +49,13 @@ export function AdminHeader({
         >
           <Menu className="w-5 h-5" />
         </button>
+        <Link
+          href="/admin"
+          className="flex items-center justify-center rounded-lg hover:opacity-90 transition-opacity"
+          aria-label="Beranda Admin"
+        >
+          <Logo className="w-auto h-7" theme="dark" alt="Logo Harsa Tri Novenda" />
+        </Link>
         <h1 className="text-base sm:text-lg font-bold font-mono tracking-tight text-white">
           {title}
         </h1>

@@ -1,5 +1,6 @@
 import * as React from "react";
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
+export { Logo };
 import {
   SiReact,
   SiNextdotjs,
@@ -90,7 +91,7 @@ export function ReactLogo({ className = "w-7 h-7", ...props }: React.ComponentPr
 }
 
 export function NextjsLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiNextdotjs>) {
-  return <SiNextdotjs className={`${className} text-zinc-900 dark:text-white`} {...props} />;
+  return <SiNextdotjs className={`${className} text-foreground`} {...props} />;
 }
 
 export function TypescriptLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiTypescript>) {
@@ -143,7 +144,7 @@ export function NodejsLogo({ className = "w-7 h-7", ...props }: React.ComponentP
 }
 
 export function ExpressLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiExpress>) {
-  return <SiExpress className={`${className} text-zinc-800 dark:text-zinc-200`} {...props} />;
+  return <SiExpress className={`${className} text-foreground`} {...props} />;
 }
 
 export function PythonLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiPython>) {
@@ -201,12 +202,12 @@ export function RedisLogo({ className = "w-7 h-7", ...props }: React.ComponentPr
 }
 
 export function PrismaLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiPrisma>) {
-  return <SiPrisma className={`${className} text-zinc-900 dark:text-white`} {...props} />;
+  return <SiPrisma className={`${className} text-foreground`} {...props} />;
 }
 
 // Architecture & Real-Time & Security
 export function SocketdotioLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiSocketdotio>) {
-  return <SiSocketdotio className={`${className} text-zinc-900 dark:text-white`} {...props} />;
+  return <SiSocketdotio className={`${className} text-foreground`} {...props} />;
 }
 
 export function JwtLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiJsonwebtokens>) {
@@ -287,11 +288,11 @@ export function FlutterLogo({ className = "w-7 h-7", ...props }: React.Component
 }
 
 export function ShadcnLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiShadcnui>) {
-  return <SiShadcnui className={`${className} text-zinc-900 dark:text-white`} {...props} />;
+  return <SiShadcnui className={`${className} text-foreground`} {...props} />;
 }
 
 export function VercelLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiVercel>) {
-  return <SiVercel className={`${className} text-zinc-900 dark:text-white`} {...props} />;
+  return <SiVercel className={`${className} text-foreground`} {...props} />;
 }
 
 export function XamppLogo({ className = "w-7 h-7", ...props }: React.ComponentProps<typeof SiXampp>) {
@@ -329,17 +330,7 @@ export function AntigravityLogo({ className = "w-7 h-7" }: { className?: string 
 
 // Site Logo
 export function RakaLogo({ className = "w-8 h-8" }: { className?: string }) {
-  return (
-    <div className={`relative flex items-center justify-center shrink-0 ${className}`}>
-      <Image
-        src="/logo.png"
-        alt="R/ Logo"
-        fill
-        sizes="32px"
-        className="object-contain invert dark:invert-0 transition-[filter] duration-200"
-      />
-    </div>
-  );
+  return <Logo className={className} />;
 }
 
 // Comprehensive Logo Resolver for all Tech Stacks & Languages
@@ -476,7 +467,7 @@ export function TechBadge({
   const logo = getTechLogo(name, iconClassName);
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-xs font-mono text-zinc-800 dark:text-zinc-200 transition-colors hover:border-zinc-300 dark:hover:border-zinc-700 ${className}`}
+      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-secondary border border-border text-xs font-mono text-foreground transition-colors hover:border-border ${className}`}
       title={name}
     >
       <span className="shrink-0 flex items-center justify-center">{logo}</span>

@@ -81,7 +81,7 @@ export default function Skills() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
-            className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3"
+            className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-3"
           >
             Capabilities
           </motion.div>
@@ -106,10 +106,10 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: groupIdx * 0.05 }}
-                className="rounded-2xl p-6 flex flex-col border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-950/80 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
+                className="rounded-2xl p-6 flex flex-col border border-border bg-card shadow-xs hover:border-border  transition-colors"
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 rounded-lg bg-zinc-950 border border-zinc-800 text-zinc-400">
+                  <div className="p-2 rounded-lg bg-zinc-950 border border-border text-muted-foreground">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-semibold text-white text-base">{group.category}</h3>
@@ -119,12 +119,12 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <div key={skill.name} className="flex flex-col gap-2">
                       <div className="flex justify-between text-xs font-mono">
-                        <span className="text-zinc-300 font-medium">{skill.name}</span>
-                        <span className="text-zinc-500">{skill.level}%</span>
+                        <span className="text-muted-foreground font-medium">{skill.name}</span>
+                        <span className="text-muted-foreground">{skill.level}%</span>
                       </div>
                       
                       {/* Skill visual level bar */}
-                      <div className="h-1.5 w-full bg-zinc-900 rounded-full overflow-hidden border border-zinc-800/40">
+                      <div className="h-1.5 w-full bg-secondary rounded-full overflow-hidden border border-border/40">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${skill.level}%` }}

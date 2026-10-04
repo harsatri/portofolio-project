@@ -28,6 +28,8 @@ import {
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { trackEvent } from "@/lib/analytics";
 import type { ProjectItem } from "@/lib/portfolio-defaults";
+import { SectionTitle } from "@/components/ui/section-title";
+
 
 export default function Projects({
   initialProjects = [],
@@ -78,14 +80,14 @@ export default function Projects({
         <div className="flex flex-col items-center text-center mb-12">
           <Badge
             variant="outline"
-            className="mb-3 px-3.5 py-1 font-sans text-xs font-semibold text-zinc-800 dark:text-zinc-300 border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs"
+            className="mb-3 px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#8C5747] dark:text-[#E7C3B5] border-[#8C5747]/20 dark:border-[#E7C3B5]/30 bg-card shadow-2xs"
           >
             Portfolio Showcase
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
+          <SectionTitle>
             Featured Systems & Applications
-          </h2>
-          <p className="text-zinc-600 dark:text-zinc-400 text-sm max-w-xl mt-3 font-normal">
+          </SectionTitle>
+          <p className="text-muted-foreground text-sm max-w-xl mt-3 font-normal">
             Kumpulan proyek sistem web enterprise, modul backend, dan model machine learning. Klik kartu untuk melihat ringkasan cepat atau langsung telusuri arsitektur lengkap.
           </p>
         </div>
@@ -93,28 +95,28 @@ export default function Projects({
         {/* Filter Controls: Tabs & Search Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full md:w-auto">
-            <TabsList className="bg-zinc-100/90 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 p-1 rounded-xl flex overflow-x-auto max-w-full scrollbar-none w-full sm:w-auto justify-start sm:justify-center shadow-xs">
+            <TabsList className="bg-secondary border border-border p-1 rounded-xl flex overflow-x-auto max-w-full scrollbar-none w-full sm:w-auto justify-start sm:justify-center shadow-xs">
               <TabsTrigger
                 value="all"
-                className="whitespace-nowrap shrink-0 text-xs font-semibold text-zinc-700 dark:text-zinc-300 data-[state=active]:bg-white dark:data-[state=active]:bg-zinc-850 data-[state=active]:text-zinc-950 dark:data-[state=active]:text-white data-[state=active]:shadow-xs"
+                className="whitespace-nowrap shrink-0 text-xs font-semibold font-mono text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
               >
                 All Projects
               </TabsTrigger>
               <TabsTrigger
                 value="fullstack"
-                className="whitespace-nowrap shrink-0 text-xs font-semibold text-zinc-700 dark:text-zinc-300 data-[state=active]:bg-white dark:data-[state=active]:bg-zinc-850 data-[state=active]:text-zinc-950 dark:data-[state=active]:text-white data-[state=active]:shadow-xs"
+                className="whitespace-nowrap shrink-0 text-xs font-semibold font-mono text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
               >
                 Full-Stack
               </TabsTrigger>
               <TabsTrigger
                 value="laravel"
-                className="whitespace-nowrap shrink-0 text-xs font-semibold text-zinc-700 dark:text-zinc-300 data-[state=active]:bg-white dark:data-[state=active]:bg-zinc-850 data-[state=active]:text-zinc-950 dark:data-[state=active]:text-white data-[state=active]:shadow-xs"
+                className="whitespace-nowrap shrink-0 text-xs font-semibold font-mono text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
               >
                 Laravel & Backend
               </TabsTrigger>
               <TabsTrigger
                 value="machine-learning"
-                className="whitespace-nowrap shrink-0 text-xs font-semibold text-zinc-700 dark:text-zinc-300 data-[state=active]:bg-white dark:data-[state=active]:bg-zinc-850 data-[state=active]:text-zinc-950 dark:data-[state=active]:text-white data-[state=active]:shadow-xs"
+                className="whitespace-nowrap shrink-0 text-xs font-semibold font-mono text-muted-foreground data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-xs"
               >
                 Machine Learning
               </TabsTrigger>
@@ -122,13 +124,13 @@ export default function Projects({
           </Tabs>
 
           <div className="relative w-full md:w-72">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Cari teknologi, judul, role..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-xs text-zinc-900 dark:text-zinc-100 placeholder:text-zinc-400 focus:outline-none focus:border-zinc-400 dark:focus:border-zinc-600 transition-colors shadow-2xs font-sans"
+              className="w-full pl-9 pr-4 py-2 bg-card border border-border rounded-xl text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-colors shadow-2xs font-sans"
             />
           </div>
         </div>
@@ -148,11 +150,11 @@ export default function Projects({
                   setPreviewProject(project);
                   trackEvent("project_click", `${project.title} (Card Click Preview)`);
                 }}
-                className="group cursor-pointer rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/90 dark:bg-zinc-900/40 hover:border-zinc-300 dark:hover:border-zinc-700 p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                className="group cursor-pointer rounded-2xl border border-border bg-card hover:border-border  p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
                 <div>
                   {/* Thumbnail Image Container */}
-                  <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-zinc-950 mb-4 border border-zinc-100 dark:border-zinc-800/60">
+                  <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-zinc-950 mb-4 border border-border">
                     <Image
                       src={project.thumbnail_url}
                       alt={project.title}
@@ -161,15 +163,15 @@ export default function Projects({
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-3">
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md text-[11px] font-sans font-medium text-zinc-900 dark:text-zinc-100 shadow-md">
-                        <Eye className="w-3.5 h-3.5 text-zinc-700 dark:text-zinc-300" />
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-card backdrop-blur-md text-[11px] font-sans font-medium text-foreground shadow-md">
+                        <Eye className="w-3.5 h-3.5 text-muted-foreground" />
                         Quick Preview
                       </span>
                     </div>
 
                     {project.is_featured && (
                       <div className="absolute top-2.5 right-2.5">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-zinc-900/90 dark:bg-white/90 backdrop-blur-md text-[10px] font-sans font-semibold text-white dark:text-zinc-950 shadow-xs border border-white/10 dark:border-zinc-800">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary backdrop-blur-md text-[10px] font-sans font-semibold text-foreground shadow-xs border border-border">
                           <Sparkles className="w-3 h-3 text-amber-400 dark:text-amber-500" />
                           Featured
                         </span>
@@ -179,29 +181,29 @@ export default function Projects({
 
                   {/* Role / Category Badge */}
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                    <span className="text-[11px] font-sans font-semibold uppercase tracking-wider text-muted-foreground">
                       {project.role}
                     </span>
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="text-base sm:text-lg font-bold text-zinc-950 dark:text-white tracking-tight mb-2 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors line-clamp-1">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground tracking-tight mb-2 group-hover:text-muted-foreground dark:group-hover:text-muted-foreground transition-colors line-clamp-1">
                     {project.title}
                   </h3>
 
                   {/* Short Summary (1-2 sentences) */}
-                  <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-2 mb-4 font-normal">
+                  <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-4 font-normal">
                     {project.short_summary}
                   </p>
                 </div>
 
                 {/* Footer: Tech Badges & Dual Actions (Preview vs Direct Detail) */}
-                <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800/60 flex items-center justify-between gap-2">
+                <div className="pt-3 border-t border-border flex items-center justify-between gap-2">
                   <div className="flex items-center gap-1.5 overflow-hidden">
                     {project.tech_stacks.slice(0, 2).map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200/60 dark:border-zinc-700/50 text-[10px] font-sans text-zinc-700 dark:text-zinc-300 truncate max-w-[100px]"
+                        className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-secondary  border border-border  text-[10px] font-sans text-muted-foreground truncate max-w-[100px]"
                         title={tech}
                       >
                         <span className="shrink-0 flex items-center justify-center">
@@ -211,7 +213,7 @@ export default function Projects({
                       </span>
                     ))}
                     {project.tech_stacks.length > 2 && (
-                      <span className="text-[10px] font-sans text-zinc-400 dark:text-zinc-500 shrink-0">
+                      <span className="text-[10px] font-sans text-muted-foreground shrink-0">
                         +{project.tech_stacks.length - 2}
                       </span>
                     )}
@@ -226,10 +228,10 @@ export default function Projects({
                         setPreviewProject(project);
                         trackEvent("project_click", `${project.title} (Quick Preview Button)`);
                       }}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/60 hover:bg-zinc-100 dark:hover:bg-zinc-800 text-[11px] font-sans font-medium text-zinc-700 dark:text-zinc-300 transition-colors cursor-pointer"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-border bg-secondary hover:bg-secondary  text-[11px] font-sans font-medium text-muted-foreground transition-colors cursor-pointer"
                       title="Buka Ringkasan Cepat"
                     >
-                      <Eye className="w-3 h-3 text-zinc-500 dark:text-zinc-400" />
+                      <Eye className="w-3 h-3 text-muted-foreground" />
                       <span>Preview</span>
                     </button>
                     <Link
@@ -238,7 +240,7 @@ export default function Projects({
                         e.stopPropagation();
                         trackEvent("project_click", `${project.title} (Direct Link Button)`);
                       }}
-                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 text-[11px] font-sans font-semibold transition-colors shadow-2xs"
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 text-[11px] font-sans font-semibold transition-colors shadow-2xs"
                       title="Buka Detail Lengkap Langsung"
                     >
                       <span>Detail</span>
@@ -252,8 +254,8 @@ export default function Projects({
         </div>
 
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-2xl">
-            <p className="text-sm font-sans text-zinc-500">
+          <div className="text-center py-16 border border-dashed border-border rounded-2xl">
+            <p className="text-sm font-sans text-muted-foreground">
               Tidak ada proyek yang sesuai dengan kata kunci &quot;{searchQuery}&quot;
             </p>
           </div>
@@ -261,11 +263,11 @@ export default function Projects({
 
         {/* Quick Preview Modal */}
         <Dialog open={Boolean(previewProject)} onOpenChange={(open) => !open && setPreviewProject(null)}>
-          <DialogContent className="max-w-2xl p-0 overflow-hidden bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 sm:rounded-2xl">
+          <DialogContent className="max-w-2xl p-0 overflow-hidden bg-card border border-border sm:rounded-2xl">
             {previewProject && (
               <div className="flex flex-col">
                 {/* Modal Banner Image */}
-                <div className="relative aspect-video w-full overflow-hidden bg-zinc-950 border-b border-zinc-200 dark:border-zinc-800">
+                <div className="relative aspect-video w-full overflow-hidden bg-zinc-950 border-b border-border">
                   <Image
                     src={previewProject.thumbnail_url}
                     alt={previewProject.title}
@@ -274,7 +276,7 @@ export default function Projects({
                     sizes="(max-width: 768px) 100vw, 672px"
                   />
                   <div className="absolute top-3 left-3">
-                    <Badge className="bg-black/70 backdrop-blur-md text-white border-zinc-700 font-sans text-xs">
+                    <Badge className="bg-black/70 backdrop-blur-md text-white border-border font-sans text-xs">
                       {previewProject.role}
                     </Badge>
                   </div>
@@ -283,24 +285,24 @@ export default function Projects({
                 {/* Modal Body */}
                 <div className="p-6 space-y-5">
                   <DialogHeader className="text-left space-y-1.5 p-0">
-                    <DialogTitle className="text-xl sm:text-2xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
+                    <DialogTitle className="text-xl sm:text-2xl font-extrabold text-foreground tracking-tight">
                       {previewProject.title}
                     </DialogTitle>
-                    <DialogDescription className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
+                    <DialogDescription className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-normal">
                       {previewProject.short_summary}
                     </DialogDescription>
                   </DialogHeader>
 
                   {/* Key Tech Stacks */}
                   <div>
-                    <h4 className="text-xs font-sans font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-wider mb-2.5">
+                    <h4 className="text-xs font-sans font-bold text-muted-foreground uppercase tracking-wider mb-2.5">
                       Technologies & Tools
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {previewProject.tech_stacks.map((tech) => (
                         <span
                           key={tech}
-                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-sans text-zinc-800 dark:text-zinc-200 font-medium hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary border border-border text-xs font-sans text-foreground font-medium hover:border-border transition-colors"
                         >
                           <span className="shrink-0 flex items-center justify-center">
                             {getTechLogo(tech, "w-4 h-4")}
@@ -312,7 +314,7 @@ export default function Projects({
                   </div>
 
                   {/* Actions Bar */}
-                  <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <div className="pt-4 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
                     <div className="flex items-center gap-2 w-full sm:w-auto">
                       {previewProject.repo_url && (
                         <a
@@ -322,7 +324,7 @@ export default function Projects({
                           onClick={() =>
                             trackEvent("project_click", `${previewProject.title} (GitHub Repo)`)
                           }
-                          className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-sans text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors w-full sm:w-auto font-medium"
+                          className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-secondary border border-border text-xs font-sans text-foreground hover:text-foreground hover:border-border transition-colors w-full sm:w-auto font-medium"
                         >
                           <Github className="w-4 h-4" />
                           <span>Repository</span>
@@ -336,7 +338,7 @@ export default function Projects({
                           onClick={() =>
                             trackEvent("project_click", `${previewProject.title} (Live Demo)`)
                           }
-                          className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs font-sans text-zinc-800 dark:text-zinc-200 hover:text-black dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors w-full sm:w-auto font-medium"
+                          className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl bg-secondary border border-border text-xs font-sans text-foreground hover:text-foreground hover:border-border transition-colors w-full sm:w-auto font-medium"
                         >
                           <ExternalLink className="w-4 h-4" />
                           <span>Live Demo</span>
@@ -350,7 +352,7 @@ export default function Projects({
                       onClick={() =>
                         trackEvent("project_click", `${previewProject.title} (Detail Page)`)
                       }
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 hover:bg-zinc-800 dark:hover:bg-zinc-200 font-semibold text-xs font-sans transition-all shadow-sm"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-xs font-sans transition-all shadow-sm"
                     >
                       <span>Lihat Detail Lengkap</span>
                       <ArrowRight className="w-4 h-4" />

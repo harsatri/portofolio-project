@@ -13,6 +13,8 @@ import { TechIcon, normalizeTechName } from "@/components/ui/tech-icon";
 import { getTechLogo } from "@/components/icons";
 import { naturalTransition } from "@/lib/motion";
 import { cn } from "@/lib/utils";
+import { SectionTitle } from "@/components/ui/section-title";
+
 
 export interface TechItem {
   name: string;
@@ -287,14 +289,14 @@ export default function TechStack({
           <div className="flex flex-col items-center text-center mb-14">
             <Badge
               variant="outline"
-              className="mb-3 px-3.5 py-1 font-sans text-xs font-semibold text-zinc-800 dark:text-zinc-300 border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-2xs"
+              className="mb-3 px-3.5 py-1 font-mono text-xs font-semibold uppercase tracking-[0.08em] text-[#8C5747] dark:text-[#E7C3B5] border-[#8C5747]/20 dark:border-[#E7C3B5]/30 bg-card shadow-2xs"
             >
               Technology Arsenal
             </Badge>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-950 dark:text-white tracking-tight">
-              Technologies & Frameworks
-            </h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-sm max-w-md mt-3 font-normal">
+            <SectionTitle>
+            Technologies & Frameworks
+          </SectionTitle>
+            <p className="text-muted-foreground text-sm max-w-md mt-3 font-normal">
               Standardized industry tooling utilized across production web platforms and data pipelines.
             </p>
           </div>
@@ -311,15 +313,15 @@ export default function TechStack({
                   ...naturalTransition,
                   delay: groupIdx * 0.08,
                 }}
-                className="rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/70 p-6 sm:p-7 shadow-xs hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors duration-200 backdrop-blur-xs"
+                className="rounded-2xl border border-border bg-card p-6 sm:p-7 shadow-xs hover:border-border  transition-colors duration-200 backdrop-blur-xs"
               >
                 {/* Category Header */}
                 <div className="flex items-center justify-between mb-5">
-                  <h3 className="text-xs font-sans font-bold text-zinc-900 dark:text-zinc-200 uppercase tracking-wider flex items-center gap-2">
+                  <h3 className="text-xs font-sans font-bold text-foreground  uppercase tracking-wider flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                     {group.category}
                   </h3>
-                  <span className="text-[11px] font-sans text-zinc-400 dark:text-zinc-500 font-medium">
+                  <span className="text-[11px] font-sans text-muted-foreground font-medium">
                     {group.items.length} tools
                   </span>
                 </div>
@@ -333,7 +335,7 @@ export default function TechStack({
                           tabIndex={0}
                           role="button"
                           aria-label={`${item.name} (${item.proficiency})`}
-                          className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-50/90 dark:bg-zinc-900/70 border border-zinc-200/90 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 hover:bg-zinc-100/90 dark:hover:bg-zinc-800/80 hover:-translate-y-0.5 transition-all duration-150 shadow-2xs cursor-default select-none focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-600"
+                          className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-secondary border border-border hover:border-border hover:bg-secondary hover:-translate-y-0.5 transition-all duration-150 shadow-2xs cursor-default select-none focus:outline-none focus:ring-2 focus:ring-ring"
                         >
                           {/* Brand / Tool Icon */}
                           <div className="w-4 h-4 flex items-center justify-center shrink-0">
@@ -343,23 +345,23 @@ export default function TechStack({
                           </div>
 
                           {/* Canonical Technology Name */}
-                          <span className="text-xs font-medium text-zinc-800 dark:text-zinc-200 tracking-tight">
+                          <span className="text-xs font-medium text-foreground tracking-tight">
                             {item.name}
                           </span>
                         </div>
                       </TooltipTrigger>
                       <TooltipContent
                         side="top"
-                        className="border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1.5 shadow-lg text-xs font-sans text-zinc-900 dark:text-zinc-100"
+                        className="border-border bg-card px-2.5 py-1.5 shadow-lg text-xs font-sans text-foreground"
                       >
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">{item.name}</span>
-                          <span className="text-zinc-400 dark:text-zinc-500">•</span>
+                          <span className="text-muted-foreground">•</span>
                           <span
                             className={
                               item.proficiency === "Advanced"
                                 ? "text-emerald-600 dark:text-emerald-400 font-medium"
-                                : "text-zinc-600 dark:text-zinc-400"
+                                : "text-muted-foreground"
                             }
                           >
                             {item.proficiency}
