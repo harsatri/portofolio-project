@@ -72,7 +72,7 @@ const EXPERIENCES: ExperienceItem[] = [
     metrics: [
       { label: "Lokasi", value: "Baturraden, Indonesia" },
       { label: "Periode", value: "Jan – Jun 2025" },
-      { label: "Fokus Proyek", value: "Web Booking Platform" },
+      { label: "Project Focus", value: "Web Booking Platform" },
     ],
     photos: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
@@ -233,10 +233,10 @@ export default function Experience({
                           <div className="flex items-center justify-between text-xs font-sans">
                             <span className="flex items-center gap-1.5 text-foreground font-bold uppercase tracking-wider">
                               <ImageIcon className="w-3.5 h-3.5 text-muted-foreground" />
-                              Dokumentasi Kegiatan & Sistem ({authenticPhotos.length})
+                              Activities & Systems Documentation ({authenticPhotos.length})
                             </span>
                             <span className="text-[11px] text-muted-foreground font-medium">
-                              Klik foto untuk perbesar
+                              Click photo to enlarge
                             </span>
                           </div>
 
@@ -253,7 +253,7 @@ export default function Experience({
                                   })
                                 }
                                 className="group relative aspect-video w-full rounded-lg overflow-hidden bg-secondary border border-border hover:border-ring transition-all duration-200 cursor-pointer shadow-xs focus:outline-none focus:ring-2 focus:ring-ring"
-                                title={`Lihat Foto ${photoIdx + 1} - ${exp.company}`}
+                                title={`View Photo ${photoIdx + 1} - ${exp.company}`}
                               >
                                 <Image
                                   src={photoUrl}
@@ -407,7 +407,7 @@ export default function Experience({
                         );
                       }}
                       className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-black/70 hover:bg-black/90 backdrop-blur-md text-white transition-colors cursor-pointer"
-                      title="Sebelumnya"
+                      title="Previous"
                     >
                       <ChevronLeft className="w-5 h-5" />
                     </button>
@@ -429,7 +429,7 @@ export default function Experience({
                         );
                       }}
                       className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-xl bg-black/70 hover:bg-black/90 backdrop-blur-md text-white transition-colors cursor-pointer"
-                      title="Selanjutnya"
+                      title="Next"
                     >
                       <ChevronRight className="w-5 h-5" />
                     </button>

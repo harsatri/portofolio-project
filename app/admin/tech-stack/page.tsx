@@ -394,7 +394,7 @@ export default function AdminTechStackPage() {
                 ) : (
                   <Save className="w-3.5 h-3.5" />
                 )}
-                <span>{isEditMode ? "Simpan Perubahan" : "Simpan"}</span>
+                <span>{isEditMode ? "Save Changes" : "Simpan"}</span>
               </Button>
             </div>
           </form>

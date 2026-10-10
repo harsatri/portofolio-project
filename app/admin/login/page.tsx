@@ -145,7 +145,7 @@ export default function AdminLoginPage() {
           href="/"
           className="text-xs font-mono text-zinc-500 hover:text-zinc-300 transition-colors"
         >
-          &larr; Kembali ke Website Portfolio
+          &larr; Back to Portfolio Website
         </Link>
       </div>
     </div>

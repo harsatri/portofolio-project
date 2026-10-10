@@ -365,7 +365,7 @@ NOTIFY pgrst, 'reload schema';`;
             ) : (
               <Save className="w-4 h-4" />
             )}
-            <span>Simpan Perubahan</span>
+            <span>Save Changes</span>
           </Button>
         </div>
       </div>
@@ -442,7 +442,7 @@ NOTIFY pgrst, 'reload schema';`;
                 OVERVIEW & PHILOSOPHY
               </span>
               <p className="text-xs font-sans text-zinc-200 font-medium leading-relaxed line-clamp-3">
-                {tagline || "Deskripsi singkat mengenai fokus keahlian dan minat teknologi Anda..."}
+                {tagline || "A brief description of your expertise and technology interests..."}
               </p>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900/80 text-[10px] font-mono text-zinc-300">
                 {isAvailable && (
@@ -611,7 +611,7 @@ NOTIFY pgrst, 'reload schema';`;
                   toast.success("Posisi foto di-reset ke rekomendasi!");
                 }}
                 className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-[11px] font-mono text-zinc-300 transition-colors cursor-pointer self-start sm:self-auto"
-                title="Kembalikan ke posisi awal terbaik"
+                title="Reset to optimal position"
               >
                 <RotateCcw className="w-3 h-3" />
                 <span>Reset Rekomendasi</span>
@@ -817,7 +817,7 @@ NOTIFY pgrst, 'reload schema';`;
           <div className="border-b border-zinc-800 pb-3">
             <h3 className="text-base font-mono font-bold text-white flex items-center gap-2">
               <Code2 className="w-4 h-4 text-emerald-400" />
-              2. Identitas Utama & Peran
+              2. Main Identity & Role
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5 font-sans">
               Nama lengkap, profesi teknikal, dan ringkasan bio yang tampil di landing page.
@@ -840,7 +840,7 @@ NOTIFY pgrst, 'reload schema';`;
 
             <div className="space-y-1.5">
               <label className="text-xs font-mono text-zinc-300 font-semibold">
-                Peran / Profesi Utama *
+                Main Role / Profession *
               </label>
               <Input
                 value={role}
@@ -854,13 +854,13 @@ NOTIFY pgrst, 'reload schema';`;
 
           <div className="space-y-1.5">
             <label className="text-xs font-mono text-zinc-300 font-semibold">
-              Tagline Bio / Ringkasan Keahlian
+              Bio Tagline / Expertise Summary
             </label>
             <Textarea
               value={tagline}
               onChange={(e) => setTagline(e.target.value)}
               rows={3}
-              placeholder="Deskripsi singkat keahlian arsitektur web, performa database, dsb..."
+              placeholder="A short description of your web architecture expertise, database performance, etc..."
               className="bg-zinc-950 border-zinc-700 text-zinc-100 text-xs leading-relaxed"
             />
           </div>
@@ -929,7 +929,7 @@ NOTIFY pgrst, 'reload schema';`;
             {/* Contact CTA */}
             <div className="p-4 rounded-xl border border-zinc-800 bg-zinc-950 space-y-2.5">
               <span className="text-[11px] font-mono text-zinc-400 uppercase font-semibold block">
-                Tombol Kontak
+                Contact Button
               </span>
               <div className="space-y-1">
                 <label className="text-[10px] font-mono text-zinc-400">Label Teks</label>
@@ -956,7 +956,7 @@ NOTIFY pgrst, 'reload schema';`;
           <div className="border-b border-zinc-800 pb-3">
             <h3 className="text-base font-mono font-bold text-white flex items-center gap-2">
               <ExternalLink className="w-4 h-4 text-purple-400" />
-              4. Media Sosial & Kontak Terhubung
+              4. Social Media & Connected Contacts
             </h3>
             <p className="text-xs text-zinc-400 mt-0.5 font-sans">
               Ikon sosial pada hero section akan otomatis mengarah ke tautan yang Anda tentukan di bawah ini.
@@ -1047,7 +1047,7 @@ NOTIFY pgrst, 'reload schema';`;
 
                 <div className="space-y-1">
                   <label className="text-[10px] font-mono text-zinc-400 font-semibold">
-                    Label Kategori
+                    Category Label
                   </label>
                   <Input
                     value={card.label}

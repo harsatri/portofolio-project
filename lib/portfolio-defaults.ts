@@ -181,7 +181,7 @@ export const DEFAULT_PROFILE: ProfileData = {
   name: "Harsa Tri Novenda",
   role: "Full-Stack Web Developer",
   tagline:
-    "Lulusan S1 Sistem Informasi dari Universitas Telkom (menunggu wisuda) dengan fokus pada pengembangan web dan sistem secara full-stack. Berpengalaman membangun aplikasi berbasis web, mencakup pengembangan frontend dan backend, manajemen basis data, integrasi REST API, serta perancangan sistem. Memiliki pengalaman tambahan dalam pengembangan machine learning menggunakan Python dan Scikit-learn.",
+    "Information Systems graduate from Telkom University (awaiting graduation) focusing on full-stack web and system development. Experienced in building web-based applications, including frontend and backend development, database management, REST API integration, and system design. Has additional experience in machine learning development using Python and Scikit-learn.",
   avatar_url: "/hero-cutout.png",
   avatar_position: "55% 20%",
   avatar_scale: 100,
@@ -231,11 +231,11 @@ export const DEFAULT_EXPERIENCES: ExperienceItem[] = [
     status: "Completed",
     type: "Internship",
     highlights:
-      "Merancang platform pemesanan (booking) berbasis web yang responsif menggunakan Figma, menerjemahkan kebutuhan stakeholder menjadi user flow, wireframe, antarmuka high-fidelity, dan prototipe interaktif.",
+      "Designed a responsive web-based booking platform using Figma, translating stakeholder requirements into user flows, wireframes, high-fidelity interfaces, and interactive prototypes.",
     deliverables: [
-      "Merancang platform pemesanan (booking) berbasis web yang responsif menggunakan Figma, menerjemahkan kebutuhan stakeholder menjadi user flow, wireframe, antarmuka high-fidelity, dan prototipe interaktif.",
-      "Berkolaborasi dengan stakeholder untuk menentukan alur pemesanan dan struktur halaman, serta melakukan iterasi desain berdasarkan masukan untuk meningkatkan usability dan pengalaman pengguna.",
-      "Menyiapkan design handoff untuk developer dan berkontribusi pada implementasi frontend menggunakan JavaScript dan Tailwind CSS, menjembatani desain UI/UX dengan antarmuka yang diimplementasikan.",
+      "Designed a responsive web-based booking platform using Figma, translating stakeholder requirements into user flows, wireframes, high-fidelity interfaces, and interactive prototypes.",
+      "Collaborated with stakeholders to define booking flows and page structures, and iterated designs based on feedback to improve usability and user experience.",
+      "Prepared design handoffs for developers and contributed to frontend implementation using JavaScript and Tailwind CSS, bridging UI/UX design with the implemented interface.",
     ],
     technologies: [
       "Figma",
@@ -247,9 +247,9 @@ export const DEFAULT_EXPERIENCES: ExperienceItem[] = [
       "User Flow",
     ],
     metrics: [
-      { label: "Lokasi", value: "Baturraden, Indonesia" },
-      { label: "Periode", value: "Jan – Jun 2025" },
-      { label: "Fokus Proyek", value: "Web Booking Platform" },
+      { label: "Location", value: "Baturraden, Indonesia" },
+      { label: "Period", value: "Jan – Jun 2025" },
+      { label: "Project Focus", value: "Web Booking Platform" },
     ],
     photos: [
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200&auto=format&fit=crop",
@@ -265,8 +265,8 @@ export const DEFAULT_CERTIFICATES: CertificateItem[] = [
     credentialId: "001026584",
     credentialUrl: "",
     skillsVerified: [
-      "Sistem Informasi & Layanan Sewa Lokasi",
-      "Hak Kekayaan Intelektual (HKI)",
+      "Information Systems & Location Rental Services",
+      "Intellectual Property Rights (IPR)",
       "BLUD Lokawisata Baturraden",
     ],
   },
@@ -277,9 +277,9 @@ export const DEFAULT_CERTIFICATES: CertificateItem[] = [
     credentialId: "BNSP-CWDEV",
     credentialUrl: "https://bnsp.go.id",
     skillsVerified: [
-      "Pengembangan Web (CWDev)",
-      "Rekayasa Perangkat Lunak",
-      "Standar Kompetensi Kerja Nasional Indonesia (SKKNI)",
+      "Web Development (CWDev)",
+      "Software Engineering",
+      "Indonesian National Work Competency Standards (SKKNI)",
     ],
   },
   {
@@ -289,19 +289,19 @@ export const DEFAULT_CERTIFICATES: CertificateItem[] = [
     credentialId: "JACSEN-2024",
     credentialUrl: "",
     skillsVerified: [
-      "Karya Tulis Ilmiah",
-      "Penelitian & Analisis Data",
+      "Scientific Writing",
+      "Research & Data Analysis",
     ],
   },
   {
     title: "Asisten Programmer Komputer — KKNI Level II Bidang Keahlian Rekayasa Perangkat Lunak",
     issuer: "LSP SMK Negeri 1 Purwokerto, BNSP",
-    date: "Mei 2022",
+    date: "May 2022",
     credentialId: "BNSP-RPL-2022",
     credentialUrl: "https://bnsp.go.id",
     skillsVerified: [
-      "Pemrograman Komputer",
-      "Rekayasa Perangkat Lunak (RPL)",
+      "Computer Programming",
+      "Software Engineering (RPL)",
       "KKNI Level II",
     ],
   },
@@ -358,27 +358,27 @@ export const DEFAULT_PROJECTS: ProjectItem[] = [
   {
     id: "dilayakin-evaluasi-kelayakan",
     slug: "dilayakin-evaluasi-kelayakan",
-    title: "DILAYAKIN — Sistem Evaluasi Kelayakan Calon Siswa Berbasis Web",
-    role: "Full-Stack Developer | Proyek Tugas Akhir",
+    title: "DILAYAKIN — Web-Based Prospective Student Eligibility Evaluation System",
+    role: "Full-Stack Developer | Final Project",
     year: "2025 – 2026",
     short_summary:
-      "Sistem pendukung keputusan berbasis web secara full-stack untuk penyaringan awal calon siswa sekolah dasar menggunakan React.js, Vite, Express.js, dan MySQL dengan metode Simple Additive Weighting (SAW).",
-    full_description: `## Ringkasan Proyek
-Proyek Tugas Akhir 2025 – 2026 yang mengimplementasikan sistem pendukung keputusan (SPK) berbasis web untuk penyaringan awal kelayakan calon siswa sekolah dasar. Sistem ini mengintegrasikan metode Simple Additive Weighting (SAW) untuk evaluasi kelayakan dan rekomendasi sekolah yang objektif dan terukur.
+      "A full-stack web-based decision support system for the initial screening of prospective elementary school students using React.js, Vite, Express.js, and MySQL with the Simple Additive Weighting (SAW) method.",
+    full_description: `## Project Summary
+Final Project 2025 – 2026 implementing a web-based decision support system (DSS) for the initial eligibility screening of prospective elementary school students. This system integrates the Simple Additive Weighting (SAW) method for objective and measurable eligibility evaluation and school recommendations.
 
-## Kebutuhan & Tantangan
-- Proses penyaringan calon siswa sebelumnya menghadapi kendala manual dan subjektivitas dalam penilaian kriteria kelayakan.
-- Diperlukan platform terpusat yang mampu menangani simulasi kelayakan, manajemen kriteria dinamis, serta memberikan rekomendasi sekolah bagi orang tua dan panitia penerimaan siswa.
+## Requirements & Challenges
+- The previous student screening process faced manual constraints and subjectivity in assessing eligibility criteria.
+- A centralized platform was needed to handle eligibility simulation, dynamic criteria management, and provide school recommendations for parents and student admission committees.
 
-## Solusi & Arsitektur
-- **Full-Stack SPA**: Dibangun menggunakan React.js dan Vite pada sisi antarmuka, didukung oleh Express.js REST API dan database MySQL.
-- **Metode Simple Additive Weighting (SAW)**: Menerapkan algoritma pembobotan kriteria terstandarisasi untuk menghasilkan skor kelayakan dan pemeringkatan rekomendasi sekolah secara otomatis.
-- **Role-Based Access Control (RBAC)**: Autentikasi dan kontrol akses multi-peran untuk admin sekolah, evaluator kriteria, dan pendaftar umum.
-- **Metodologi RAD (Rapid Application Development)**: Pengembangan iteratif berbasis masukan langsung dari sekolah mitra dan Dinas Pendidikan setempat.
+## Solutions & Architecture
+- **Full-Stack SPA**: Built using React.js and Vite on the frontend, supported by Express.js REST API and MySQL database.
+- **Simple Additive Weighting (SAW) Method**: Implemented a standardized criteria weighting algorithm to automatically generate eligibility scores and school recommendation rankings.
+- **Role-Based Access Control (RBAC)**: Authentication and multi-role access control for school admins, criteria evaluators, and general applicants.
+- **RAD (Rapid Application Development) Methodology**: Iterative development based on direct feedback from partner schools and the local Education Office.
 
-## Pengujian & Hasil
-- Pengujian fungsional menyeluruh dengan Black Box Testing.
-- Pengujian User Acceptance Testing (UAT) bersama pihak sekolah dan orang tua siswa menghasilkan skor penerimaan sebesar **89,59% (kategori Sangat Layak)**.`,
+## Testing & Results
+- Comprehensive functional testing with Black Box Testing.
+- User Acceptance Testing (UAT) with school officials and parents yielded an acceptance score of **89.59% (Highly Feasible category)**.`,
     thumbnail_url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
     gallery_urls: [
       "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
@@ -390,9 +390,9 @@ Proyek Tugas Akhir 2025 – 2026 yang mengimplementasikan sistem pendukung keput
     is_featured: true,
     display_order: 1,
 
-    subtitle: "Sistem Pendukung Keputusan Kelayakan Calon Siswa (Metode SAW)",
+    subtitle: "Prospective Student Eligibility Decision Support System (SAW Method)",
     description:
-      "Mengembangkan sistem pendukung keputusan berbasis web secara full-stack untuk penyaringan awal calon siswa SD menggunakan React.js, Express.js, dan MySQL dengan metode Simple Additive Weighting (SAW). UAT mencapai 89,59% (Sangat Layak).",
+      "Developed a full-stack web-based decision support system for initial elementary school student screening using React.js, Express.js, and MySQL with the Simple Additive Weighting (SAW) method. UAT reached 89.59% (Highly Feasible).",
     category: "fullstack",
     techStack: ["React.js", "Vite", "Express.js", "MySQL", "JavaScript", "REST API", "Tailwind CSS"],
     github: "https://github.com/harsatri",
@@ -400,39 +400,39 @@ Proyek Tugas Akhir 2025 – 2026 yang mengimplementasikan sistem pendukung keput
     thumbnailUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop",
     featuredSpan: "lg:col-span-12",
     metrics: [
-      { label: "UAT Acceptance", value: "89,59% (Sangat Layak)" },
-      { label: "Metode SPK", value: "Simple Additive Weighting" },
-      { label: "Metodologi", value: "Rapid Application Dev" },
-      { label: "Arsitektur", value: "Full-Stack React & Express" },
+      { label: "UAT Acceptance", value: "89.59% (Highly Feasible)" },
+      { label: "DSS Method", value: "Simple Additive Weighting" },
+      { label: "Methodology", value: "Rapid Application Dev" },
+      { label: "Architecture", value: "Full-Stack React & Express" },
     ],
     architectureFlow: [
-      { step: "Requirements Analysis", detail: "Pengembangan iteratif bersama sekolah mitra dan Dinas Pendidikan setempat" },
-      { step: "Kriteria & Pembobotan", detail: "Formulasi bobot kriteria kelayakan berbasis metode SAW" },
-      { step: "Full-Stack Implementation", detail: "REST API Express.js terintegrasi dengan frontend React.js dan database MySQL" },
-      { step: "Black Box & UAT Testing", detail: "Validasi fungsional dan pengujian penerimaan pengguna dengan hasil 89,59%" },
+      { step: "Requirements Analysis", detail: "Iterative development with partner schools and local Education Office" },
+      { step: "Criteria & Weighting", detail: "Formulation of eligibility criteria weights based on the SAW method" },
+      { step: "Full-Stack Implementation", detail: "Express.js REST API integrated with React.js frontend and MySQL database" },
+      { step: "Black Box & UAT Testing", detail: "Functional validation and user acceptance testing with 89.59% result" },
     ],
   },
   {
     id: "panpin-shoe-treatment",
     slug: "panpin-shoe-treatment",
-    title: "Panpin Shoe Treatment — Sistem Kasir & Manajemen Bisnis Berbasis Web",
-    role: "Full-Stack Developer | Proyek Capstone",
+    title: "Panpin Shoe Treatment — Web-Based POS & Business Management System",
+    role: "Full-Stack Developer | Capstone Project",
     year: "2025",
     short_summary:
-      "Sistem kasir dan manajemen bisnis berbasis web untuk mendigitalisasi proses transaksi, manajemen layanan, pelaporan keuangan, dan otomasi notifikasi Telegram Bot.",
-    full_description: `## Ringkasan Proyek
-Proyek Capstone 2025 yang bertujuan mendigitalisasi seluruh operasional Panpin Shoe Treatment, menggantikan pencatatan manual berbasis kertas menuju sistem manajemen kasir (POS) dan operasional terintegrasi.
+      "A web-based point-of-sale and business management system to digitize transaction processes, service management, financial reporting, and automate Telegram Bot notifications.",
+    full_description: `## Project Summary
+Capstone Project 2025 aimed at digitizing all operations of Panpin Shoe Treatment, transitioning from manual paper-based recording to an integrated POS and operational management system.
 
-## Masalah & Kebutuhan Bisnis
-- Pencatatan transaksi dan antrean sepatu masih manual sehingga rentan terjadi kesalahan input dan kehilangan riwayat layanan.
-- Pelaporan keuangan harian dan bulanan memakan waktu rekapitulasi yang lama.
-- Pelanggan dan kasir membutuhkan update status pengerjaan yang cepat dan transparan.
+## Business Problems & Needs
+- Transaction and shoe queue recording were manual, making them prone to input errors and lost service history.
+- Daily and monthly financial reporting took a long time to recapitulate.
+- Customers and cashiers needed fast and transparent service status updates.
 
-## Solusi & Arsitektur
-- **Full-Stack Laravel & MariaDB**: Sistem backend tangguh dengan kontrol akses berbasis peran (Admin/Owner, Kasir, Pengguna Operasional).
-- **Modul Transaksi & Layanan Lengkap**: Pencatatan order, status pengerjaan sepatu, invoice digital, dan rekapitulasi keuangan otomatis.
-- **Otomasi Telegram Bot & n8n**: Integrasi webhook untuk mengirimkan notifikasi transaksi dan progres layanan secara langsung dan real-time.
-- **Evaluasi Usability**: Pengujian System Usability Scale (SUS) bersama pemilik usaha dan kasir, memperoleh skor evaluasi 65 dan 72,5.`,
+## Solutions & Architecture
+- **Full-Stack Laravel & MariaDB**: Robust backend system with role-based access control (Admin/Owner, Cashier, Operational User).
+- **Complete Transaction & Service Module**: Order recording, shoe service status, digital invoices, and automatic financial recapitulation.
+- **Telegram Bot & n8n Automation**: Webhook integration to send direct and real-time transaction notifications and service progress.
+- **Usability Evaluation**: System Usability Scale (SUS) testing with the business owner and cashiers, obtaining evaluation scores of 65 and 72.5.`,
     thumbnail_url: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
     gallery_urls: [
       "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
@@ -444,9 +444,9 @@ Proyek Capstone 2025 yang bertujuan mendigitalisasi seluruh operasional Panpin S
     is_featured: true,
     display_order: 2,
 
-    subtitle: "Sistem Kasir & Manajemen Bisnis Terintegrasi Telegram Bot",
+    subtitle: "Integrated POS & Business Management System with Telegram Bot",
     description:
-      "Mengembangkan sistem kasir dan manajemen bisnis berbasis web menggunakan Laravel dan MariaDB dengan notifikasi real-time Telegram Bot via n8n serta kontrol akses multi-peran.",
+      "Developed a web-based POS and business management system using Laravel and MariaDB with real-time Telegram Bot notifications via n8n and multi-role access control.",
     category: "laravel",
     techStack: ["Laravel", "PHP", "MariaDB", "Telegram Bot API", "n8n", "JavaScript"],
     github: "https://github.com/harsatri",
@@ -454,33 +454,33 @@ Proyek Capstone 2025 yang bertujuan mendigitalisasi seluruh operasional Panpin S
     thumbnailUrl: "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
     featuredSpan: "lg:col-span-12",
     metrics: [
-      { label: "Skor SUS", value: "65 & 72,5 (Usability)" },
-      { label: "Otomasi", value: "Telegram Bot & n8n" },
-      { label: "Kontrol Akses", value: "Role-Based Multi-User" },
-      { label: "Modul Inti", value: "Kasir & Laporan Keuangan" },
+      { label: "SUS Score", value: "65 & 72.5 (Usability)" },
+      { label: "Automation", value: "Telegram Bot & n8n" },
+      { label: "Access Control", value: "Role-Based Multi-User" },
+      { label: "Core Modules", value: "POS & Financial Reports" },
     ],
     architectureFlow: [
-      { step: "Analisis Kebutuhan", detail: "Pemetaan proses manual kasir dan pelaporan Panpin Shoe Treatment" },
-      { step: "Perancangan Basis Data", detail: "Normalisasi tabel transaksi, layanan, pelanggan, dan audit keuangan pada MariaDB" },
-      { step: "Pengembangan Laravel", detail: "Implementasi MVC architecture, RBAC, dan modul kasir intuitif" },
-      { step: "Integrasi Bot & n8n", detail: "Pengiriman notifikasi otomatis perubahan status layanan ke Telegram" },
+      { step: "Requirements Analysis", detail: "Mapping manual POS and reporting processes of Panpin Shoe Treatment" },
+      { step: "Database Design", detail: "Normalization of transaction, service, customer, and financial audit tables on MariaDB" },
+      { step: "Laravel Development", detail: "Implementation of MVC architecture, RBAC, and intuitive POS module" },
+      { step: "Bot & n8n Integration", detail: "Automated notification delivery of service status changes to Telegram" },
     ],
   },
   {
     id: "skincare-product-catalog",
     slug: "skincare-product-catalog",
-    title: "Skincare Product Catalog — Katalog Produk Skincare Berbasis Web",
-    role: "Full-Stack Developer | Proyek Pribadi",
+    title: "Skincare Product Catalog — Web-Based Skincare Product Catalog",
+    role: "Full-Stack Developer | Personal Project",
     year: "2024",
     short_summary:
-      "Katalog produk skincare berbasis web untuk menampilkan produk, harga, deskripsi, dan detail produk melalui antarmuka yang bersih dan responsif.",
-    full_description: `## Ringkasan Proyek
-Proyek web katalog produk personal bertema skincare yang dibangun untuk memamerkan katalog produk kecantikan dengan tampilan elegan, navigasi cepat, dan integrasi basis data dinamis.
+      "A web-based skincare product catalog to display products, prices, descriptions, and product details through a clean and responsive interface.",
+    full_description: `## Project Summary
+A personal web project featuring a skincare-themed product catalog built to showcase beauty products with an elegant appearance, fast navigation, and dynamic database integration.
 
-## Fitur Utama
-- **Katalog Produk Dinamis**: Menampilkan daftar produk dengan filter kategori, harga, status ketersediaan, dan detail spesifikasi produk.
-- **Antarmuka Responsif & Estetis**: Desain visual bersih dan modern dengan kartu produk terstruktur dan tata letak intuitif yang nyaman di perangkat mobile maupun desktop.
-- **Integrasi Basis Data**: Didukung backend Laravel dan MySQL untuk pengelolaan data produk yang terstruktur dan mudah diperbarui.`,
+## Key Features
+- **Dynamic Product Catalog**: Displays a list of products with filters for category, price, availability status, and detailed product specifications.
+- **Responsive & Aesthetic Interface**: Clean and modern visual design with structured product cards and an intuitive layout comfortable on both mobile and desktop devices.
+- **Database Integration**: Supported by a Laravel and MySQL backend for structured and easily updatable product data management.`,
     thumbnail_url: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
     gallery_urls: [
       "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
@@ -491,9 +491,9 @@ Proyek web katalog produk personal bertema skincare yang dibangun untuk memamerk
     is_featured: false,
     display_order: 3,
 
-    subtitle: "Katalog Produk Skincare Dinamis & Responsif",
+    subtitle: "Dynamic & Responsive Skincare Product Catalog",
     description:
-      "Website katalog produk bertema skincare berbasis Laravel dan MySQL yang menampilkan produk, harga, deskripsi, dan galeri visual yang terstruktur rapi.",
+      "A skincare-themed product catalog website based on Laravel and MySQL that displays products, prices, descriptions, and neatly structured visual galleries.",
     category: "laravel",
     techStack: ["Laravel", "PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/harsatri",
@@ -501,28 +501,28 @@ Proyek web katalog produk personal bertema skincare yang dibangun untuk memamerk
     thumbnailUrl: "https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1200&auto=format&fit=crop",
     featuredSpan: "lg:col-span-6",
     metrics: [
-      { label: "Tipe Proyek", value: "Proyek Pribadi" },
-      { label: "Teknologi", value: "Laravel & MySQL" },
-      { label: "Desain", value: "Clean & Responsive UI" },
-      { label: "Konten", value: "Katalog Produk Dinamis" },
+      { label: "Project Type", value: "Personal Project" },
+      { label: "Technology", value: "Laravel & MySQL" },
+      { label: "Design", value: "Clean & Responsive UI" },
+      { label: "Content", value: "Dynamic Product Catalog" },
     ],
   },
   {
     id: "stroke-risk-prediction",
     slug: "stroke-risk-prediction",
-    title: "Stroke Risk Prediction — Machine Learning & Dashboard Interaktif",
-    role: "Data Science / Machine Learning Developer | Proyek Akademik",
+    title: "Stroke Risk Prediction — Machine Learning & Interactive Dashboard",
+    role: "Data Science / Machine Learning Developer | Academic Project",
     year: "2024",
     short_summary:
-      "Sistem klasifikasi machine learning berbasis Naive Bayes untuk memprediksi potensi risiko stroke dengan dashboard Streamlit interaktif secara real-time.",
-    full_description: `## Ringkasan Proyek
-Proyek Akademik 2024 yang mengembangkan model klasifikasi machine learning untuk memprediksi risiko penyakit stroke pada pasien berdasarkan karakteristik klinis dan demografis.
+      "A Naive Bayes-based machine learning classification system to predict potential stroke risks with a real-time interactive Streamlit dashboard.",
+    full_description: `## Project Summary
+An Academic Project in 2024 that developed a machine learning classification model to predict the risk of stroke in patients based on clinical and demographic characteristics.
 
-## Alur Pengembangan Model
-- **Preprocessing Data**: Encoding fitur kategorikal, imputasi missing values, pembagian dataset train-test split, dan penyiapan fitur numerik terstandarisasi.
-- **Pemodelan Naive Bayes & Tuning**: Pembangunan model klasifikasi Naive Bayes yang dilanjutkan dengan hyperparameter tuning untuk memaksimalkan metrik evaluasi.
-- **Evaluasi Metrik**: Analisis komparatif performa sebelum dan sesudah tuning menggunakan Confusion Matrix, Precision, Recall, dan F1-Score.
-- **Dashboard Streamlit Interaktif**: Antarmuka web ramah pengguna yang memungkinkan input data klinis pasien baru secara instan, menampilkan prediksi probabilitas risiko stroke secara real-time, serta visualisasi eksplorasi dataset dengan Matplotlib dan Seaborn.`,
+## Model Development Workflow
+- **Data Preprocessing**: Encoding categorical features, missing value imputation, train-test split dataset division, and preparation of standardized numerical features.
+- **Naive Bayes Modeling & Tuning**: Building the Naive Bayes classification model followed by hyperparameter tuning to maximize evaluation metrics.
+- **Metric Evaluation**: Comparative performance analysis before and after tuning using Confusion Matrix, Precision, Recall, and F1-Score.
+- **Interactive Streamlit Dashboard**: A user-friendly web interface allowing instant clinical data input for new patients, displaying real-time stroke risk probability predictions, and dataset exploration visualization with Matplotlib and Seaborn.`,
     thumbnail_url: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
     gallery_urls: [
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop",
@@ -533,9 +533,9 @@ Proyek Akademik 2024 yang mengembangkan model klasifikasi machine learning untuk
     is_featured: false,
     display_order: 4,
 
-    subtitle: "Prediksi Risiko Stroke Berbasis Algoritma Naive Bayes & Streamlit",
+    subtitle: "Stroke Risk Prediction Based on Naive Bayes Algorithm & Streamlit",
     description:
-      "Mengembangkan pipeline machine learning Naive Bayes dengan hyperparameter tuning untuk prediksi risiko stroke, dilengkapi dashboard interaktif real-time menggunakan Streamlit.",
+      "Developed a Naive Bayes machine learning pipeline with hyperparameter tuning for stroke risk prediction, equipped with a real-time interactive dashboard using Streamlit.",
     category: "machine-learning",
     techStack: ["Python", "Scikit-learn", "Pandas", "NumPy", "Naive Bayes", "Streamlit"],
     github: "https://github.com/harsatri",

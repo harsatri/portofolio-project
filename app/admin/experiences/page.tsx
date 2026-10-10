@@ -222,7 +222,7 @@ export default function AdminExperiencesPage() {
         if (!editingId) {
           const { error } = await supabase.from("experiences").insert(payloadToUse);
           if (error) throw error;
-          toast.success("Pengalaman kerja berhasil ditambahkan!");
+          toast.success("Work experience successfully added!");
         } else {
           const { data, error } = await supabase
             .from("experiences")
@@ -234,7 +234,7 @@ export default function AdminExperiencesPage() {
             const { error: insertErr } = await supabase.from("experiences").insert(payloadToUse);
             if (insertErr) throw insertErr;
           }
-          toast.success("Pengalaman kerja berhasil diperbarui!");
+          toast.success("Work experience successfully updated!");
         }
       };
 
@@ -300,7 +300,7 @@ NOTIFY pgrst, 'reload schema';`;
 
   const handleDelete = async (id?: string, compName?: string) => {
     if (!id) {
-      toast.error("Pengalaman default tidak dapat dihapus dari database lokal");
+      toast.error("Default experience cannot be deleted from the local database");
       return;
     }
     if (!confirm(`Hapus pengalaman di "${compName}"?`)) return;
@@ -308,7 +308,7 @@ NOTIFY pgrst, 'reload schema';`;
     try {
       const { error } = await supabase.from("experiences").delete().eq("id", id);
       if (error) throw error;
-      toast.success("Pengalaman kerja berhasil dihapus");
+      toast.success("Work experience successfully deleted");
       await triggerRevalidation("/");
       fetchExperiences();
     } catch (err: unknown) {
@@ -323,7 +323,7 @@ NOTIFY pgrst, 'reload schema';`;
         <div>
           <h2 className="text-xl font-bold font-mono text-white flex items-center gap-2.5">
             <Briefcase className="w-5 h-5 text-blue-400" />
-            <span>Manajemen Riwayat Pengalaman Kerja</span>
+            <span>Work Experience History Management</span>
           </h2>
           <p className="text-xs text-zinc-400 mt-1 font-mono">
             Kelola perusahaan, peran, periode, dan capaian tanggung jawab teknis
@@ -358,7 +358,7 @@ NOTIFY pgrst, 'reload schema';`;
             className="rounded-xl bg-white text-zinc-950 hover:bg-zinc-200 text-xs font-mono font-semibold h-9 gap-1.5"
           >
             <Plus className="w-4 h-4" />
-            <span>Tambah Pengalaman</span>
+            <span>Add Experience</span>
           </Button>
         </div>
       </div>
@@ -489,7 +489,7 @@ NOTIFY pgrst, 'reload schema';`;
         <DialogContent className="max-w-2xl bg-zinc-900 border-zinc-800 text-white p-6 sm:p-8">
           <DialogHeader>
             <DialogTitle className="font-mono text-base font-bold">
-              {editingId ? "Edit Pengalaman Kerja" : "Tambah Pengalaman Baru"}
+              {editingId ? "Edit Work Experience" : "Add Experience Baru"}
             </DialogTitle>
             <DialogDescription className="text-xs text-zinc-400 font-mono">
               Kelola entri pekerjaan profesional untuk ditampilkan di timeline karir
@@ -660,7 +660,7 @@ NOTIFY pgrst, 'reload schema';`;
                       }}
                       className="text-[10px] font-mono text-blue-400 hover:underline"
                     >
-                      Kembalikan ke Otomatis Kalender
+                      Revert to Auto Calendar
                     </button>
                   </div>
                   <input

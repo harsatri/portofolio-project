@@ -88,7 +88,7 @@ export default function Projects({
             Featured Systems & Applications
           </SectionTitle>
           <p className="text-muted-foreground text-sm max-w-xl mt-3 font-normal">
-            Kumpulan proyek sistem web enterprise, modul backend, dan model machine learning. Klik kartu untuk melihat ringkasan cepat atau langsung telusuri arsitektur lengkap.
+            A collection of enterprise web systems, backend modules, and machine learning projects. Click on a card for a quick preview or to explore the full architecture.
           </p>
         </div>
 
@@ -127,7 +127,7 @@ export default function Projects({
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <input
               type="text"
-              placeholder="Cari teknologi, judul, role..."
+              placeholder="Search technologies, titles, roles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-9 pr-4 py-2 bg-card border border-border rounded-xl text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-ring transition-colors shadow-2xs font-sans"
@@ -229,7 +229,7 @@ export default function Projects({
                         trackEvent("project_click", `${project.title} (Quick Preview Button)`);
                       }}
                       className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-border bg-secondary hover:bg-secondary  text-[11px] font-sans font-medium text-muted-foreground transition-colors cursor-pointer"
-                      title="Buka Ringkasan Cepat"
+                      title="Open Quick Preview"
                     >
                       <Eye className="w-3 h-3 text-muted-foreground" />
                       <span>Preview</span>
@@ -241,7 +241,7 @@ export default function Projects({
                         trackEvent("project_click", `${project.title} (Direct Link Button)`);
                       }}
                       className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 text-[11px] font-sans font-semibold transition-colors shadow-2xs"
-                      title="Buka Detail Lengkap Langsung"
+                      title="Open Full Details"
                     >
                       <span>Detail</span>
                       <ArrowRight className="w-3 h-3" />
@@ -256,7 +256,7 @@ export default function Projects({
         {filteredProjects.length === 0 && (
           <div className="text-center py-16 border border-dashed border-border rounded-2xl">
             <p className="text-sm font-sans text-muted-foreground">
-              Tidak ada proyek yang sesuai dengan kata kunci &quot;{searchQuery}&quot;
+              No projects found matching the keyword &quot;{searchQuery}&quot;
             </p>
           </div>
         )}
@@ -346,7 +346,7 @@ export default function Projects({
                       )}
                     </div>
 
-                    {/* Primary Button: Lihat Detail Lengkap */}
+                    {/* Primary Button: View Full Details */}
                     <Link
                       href={`/projects/${previewProject.slug || previewProject.id}`}
                       onClick={() =>
@@ -354,7 +354,7 @@ export default function Projects({
                       }
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-xs font-sans transition-all shadow-sm"
                     >
-                      <span>Lihat Detail Lengkap</span>
+                      <span>View Full Details</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   </div>

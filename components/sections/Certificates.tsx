@@ -21,7 +21,7 @@ const CERTIFICATES: Certificate[] = [
     date: "Jun 2026",
     credentialId: "BNSP-CWDEV-62026",
     credentialUrl: "https://bnsp.go.id",
-    skillsVerified: ["Pengembangan Perangkat Lunak", "Pemrograman", "Web Development"],
+    skillsVerified: ["Software Engineering", "Programming", "Web Development"],
   },
 ];
 

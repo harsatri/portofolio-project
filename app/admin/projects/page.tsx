@@ -238,7 +238,7 @@ export default function AdminProjectsPage() {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Cari judul project, kategori, atau tag teknologi..."
+          placeholder="Search project titles, categories, or tech tags..."
           className="w-full bg-zinc-900 border border-zinc-800 focus:border-zinc-500 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder:text-zinc-500 focus:outline-none"
         />
       </div>
@@ -393,7 +393,7 @@ export default function AdminProjectsPage() {
                     <Link
                       href={`/projects/${p.slug || p.id}`}
                       target="_blank"
-                      title="Lihat Halaman Publik"
+                      title="View Public Page"
                     >
                       <ExternalLink className="w-3 h-3 text-blue-400" />
                       <span className="hidden sm:inline">Preview</span>

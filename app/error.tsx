@@ -82,7 +82,7 @@ export default function GlobalError({ error, reset }: ErrorBoundaryProps) {
             >
               <Link href="/">
                 <Home className="w-4 h-4 text-blue-500 dark:text-blue-400" />
-                <span>Kembali ke Beranda</span>
+                <span>Back to Home</span>
               </Link>
             </Button>
           </div>

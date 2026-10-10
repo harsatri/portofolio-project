@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: "%s | Harsa Tri Novenda",
   },
   description:
-    "Portfolio Harsa Tri Novenda — Fresh Graduate S1 Sistem Informasi Universitas Telkom. Frontend & Full-Stack Web Developer dengan keahlian React.js, Next.js, Laravel, dan Node.js.",
+    "Portfolio of Harsa Tri Novenda — Information Systems Graduate from Telkom University. Frontend & Full-Stack Web Developer with expertise in React.js, Next.js, Laravel, and Node.js.",
   keywords: [
     "Harsa Tri Novenda",
     "Frontend Developer",
@@ -55,10 +55,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Harsa Tri Novenda — Frontend & Full-Stack Web Developer",
     description:
-      "Portfolio dan showcase project Harsa Tri Novenda — Frontend & Full-Stack Web Developer.",
+      "Portfolio and project showcase of Harsa Tri Novenda — Frontend & Full-Stack Web Developer.",
     url: "/",
     siteName: "Harsa Tri Novenda Portfolio",
-    locale: "id_ID",
+    locale: "en_US",
     type: "website",
     images: [
       {
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Harsa Tri Novenda — Frontend & Full-Stack Web Developer",
     description:
-      "Portfolio dan showcase project Harsa Tri Novenda — Frontend & Full-Stack Web Developer.",
+      "Portfolio and project showcase of Harsa Tri Novenda — Frontend & Full-Stack Web Developer.",
     images: ["/opengraph-image"],
     creator: "@hasnatria",
   },

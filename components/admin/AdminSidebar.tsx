@@ -111,7 +111,7 @@ export function AdminSidebar({ mobileOpen, onCloseMobile }: AdminSidebarProps) {
         >
           <span className="flex items-center gap-2">
             <ExternalLink className="w-3.5 h-3.5" />
-            <span>Lihat Website</span>
+            <span>View Website</span>
           </span>
           <span className="text-[10px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-400">Live</span>
         </Link>

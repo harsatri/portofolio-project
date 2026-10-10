@@ -182,7 +182,7 @@ export default function AdminDashboardPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-2xl bg-gradient-to-r from-zinc-900 to-zinc-900/60 border border-zinc-800 shadow-sm">
         <div>
           <h2 className="text-xl font-bold font-mono text-white">
-            Ringkasan Statistik & Portfolio
+            Statistics & Portfolio Summary
           </h2>
           <p className="text-xs text-zinc-400 mt-1 font-mono">
             Pantau interaksi pengunjung secara real-time dan kelola data portfolio
@@ -237,7 +237,7 @@ export default function AdminDashboardPage() {
           accentColor="purple"
         />
         <StatsCard
-          title="Kontak Masuk"
+          title="Incoming Contacts"
           value={data.totalContactClicks}
           description="Klik Email, WA & LinkedIn"
           icon={MessageSquare}
@@ -295,7 +295,7 @@ export default function AdminDashboardPage() {
           <div className="pt-4 mt-6 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-500 font-mono">
             <span>Dihitung dari event klik pengunjung</span>
             <Link href="/admin/analytics" className="text-purple-400 hover:underline">
-              Lihat Detail Analitik &rarr;
+              View Analytics Details &rarr;
             </Link>
           </div>
         </div>

@@ -64,7 +64,7 @@ export default function NotFound() {
             >
               <Link href="/">
                 <ArrowLeft className="w-4 h-4" />
-                <span>Kembali ke Beranda</span>
+                <span>Back to Home</span>
               </Link>
             </Button>
 
@@ -75,7 +75,7 @@ export default function NotFound() {
             >
               <Link href="/#projects">
                 <FolderGit2 className="w-4 h-4 text-purple-500 dark:text-purple-400" />
-                <span>Lihat Proyek</span>
+                <span>View Projects</span>
               </Link>
             </Button>
           </div>

@@ -52,7 +52,7 @@ export function AdminHeader({
         <Link
           href="/admin"
           className="flex items-center justify-center rounded-lg hover:opacity-90 transition-opacity"
-          aria-label="Beranda Admin"
+          aria-label="Admin Home"
         >
           <Logo className="w-auto h-7" theme="dark" alt="Logo Harsa Tri Novenda" />
         </Link>

@@ -229,7 +229,7 @@ export default function ProjectFormPage() {
       return;
     }
     if (!formData.short_summary.trim()) {
-      toast.error("Ringkasan Singkat (Short Summary) wajib diisi");
+      toast.error("Short Summary is required");
       return;
     }
 
@@ -382,7 +382,7 @@ export default function ProjectFormPage() {
           className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Kembali ke Daftar Project</span>
+          <span>Back to Project List</span>
         </Link>
         <div className="flex items-center gap-2">
           {!isNew && formData.slug && (
@@ -391,7 +391,7 @@ export default function ProjectFormPage() {
               target="_blank"
               className="inline-flex items-center gap-1 text-xs font-mono text-blue-400 hover:underline"
             >
-              <span>Lihat Halaman Publik</span>
+              <span>View Public Page</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
           )}
@@ -410,13 +410,13 @@ export default function ProjectFormPage() {
         <div className="space-y-4">
           <h3 className="text-sm font-mono font-bold text-white uppercase tracking-wider pb-2 border-b border-zinc-800 flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-blue-500" />
-            <span>Informasi Pokok Proyek</span>
+            <span>Core Project Information</span>
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-1.5 sm:col-span-2">
               <label className="text-xs font-mono font-medium text-zinc-300">
-                Judul Proyek <span className="text-red-400">*</span>
+                Project Title <span className="text-red-400">*</span>
               </label>
               <input
                 type="text"
@@ -447,7 +447,7 @@ export default function ProjectFormPage() {
 
             <div className="space-y-1.5">
               <label className="text-xs font-mono font-medium text-zinc-300">
-                Peran / Role <span className="text-red-400">*</span>
+                Role <span className="text-red-400">*</span>
               </label>
               <input
                 type="text"
@@ -461,7 +461,7 @@ export default function ProjectFormPage() {
 
             <div className="space-y-1.5 sm:col-span-2">
               <label className="text-xs font-mono font-medium text-zinc-300">
-                Kategori Proyek (Untuk Tab Filter Showcase) <span className="text-red-400">*</span>
+                Project Category (For Showcase Filter Tab) <span className="text-red-400">*</span>
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 {[
@@ -489,7 +489,7 @@ export default function ProjectFormPage() {
             <div className="space-y-2 sm:col-span-2">
               <div className="flex flex-wrap items-center justify-between gap-1.5">
                 <label className="text-xs font-mono font-medium text-zinc-300">
-                  Tahun / Periode Pengerjaan (Opsional)
+                  Year / Project Period (Optional)
                 </label>
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span className="text-[10px] font-mono text-zinc-500">Preset:</span>
@@ -520,11 +520,11 @@ export default function ProjectFormPage() {
           </div>
         </div>
 
-        {/* SECTION 2: Ringkasan Singkat (Short Summary) */}
+        {/* SECTION 2: Short Summary */}
         <div className="space-y-2">
           <div className="flex items-center justify-between">
             <label className="text-xs font-mono font-medium text-zinc-300">
-              Ringkasan Singkat (Short Summary) <span className="text-red-400">*</span>
+              Short Summary <span className="text-red-400">*</span>
             </label>
             <span
               className={`text-xs font-mono ${
@@ -556,7 +556,7 @@ export default function ProjectFormPage() {
           <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
             <div>
               <label className="text-xs font-mono font-bold text-white uppercase tracking-wider">
-                Deskripsi Lengkap Proyek (Markdown / Rich-Text)
+                Full Project Description (Markdown / Rich-Text)
               </label>
               <p className="text-[11px] text-zinc-400 font-mono mt-0.5">
                 Mendukung sintaks Markdown: ## Heading, **Bold**, - List, dan ```code
@@ -656,7 +656,7 @@ export default function ProjectFormPage() {
               bucket="portfolio-assets"
               folder="projects"
               maxFiles={12}
-              label="Upload Foto Galeri Proyek"
+              label="Upload Project Gallery Photos"
               helperText="Pilih atau seret satu/beberapa file foto screenshot proyek (Maks. 5MB per file)"
             />
           </div>
@@ -801,7 +801,7 @@ export default function ProjectFormPage() {
               <div className="w-11 h-6 bg-zinc-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
               <span className="ml-3 text-xs font-mono font-medium text-zinc-300 flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Jadikan Proyek Unggulan (Featured)</span>
+                <span>Make Featured Project</span>
               </span>
             </label>
           </div>
@@ -829,7 +829,7 @@ export default function ProjectFormPage() {
             ) : (
               <>
                 <Save className="w-4 h-4" />
-                <span>{isNew ? "Buat Proyek" : "Simpan Perubahan"}</span>
+                <span>{isNew ? "Create Project" : "Save Changes"}</span>
               </>
             )}
           </Button>

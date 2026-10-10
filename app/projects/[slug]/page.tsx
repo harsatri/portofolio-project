@@ -99,7 +99,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border  bg-secondary hover:bg-secondary  text-xs font-mono font-semibold text-foreground transition-all group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            <span>Kembali ke Portfolio</span>
+            <span>Back to Portfolio</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -149,7 +149,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 text-xs font-mono font-semibold transition-all shadow-md hover:shadow-lg w-full sm:w-auto"
               >
                 <ExternalLink className="w-4 h-4" />
-                <span>Lihat Live Demo</span>
+                <span>View Live Demo</span>
               </a>
             )}
 
@@ -240,7 +240,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 </div>
                 {(project.year || project.period) && (
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-muted-foreground shrink-0">Tahun:</span>
+                    <span className="text-muted-foreground shrink-0">Year:</span>
                     <span className="text-foreground font-semibold text-right">
                       {project.year || project.period}
                     </span>
@@ -269,7 +269,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h3 className="text-xl sm:text-2xl font-bold text-foreground tracking-tight">
-                  Proyek Lainnya
+                  Other Projects
                 </h3>
                 <p className="text-xs text-muted-foreground font-mono mt-1">
                   Eksplorasi karya dan sistem rekayasa lainnya
@@ -280,7 +280,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 href="/#projects"
                 className="text-xs font-mono text-blue-500 hover:underline inline-flex items-center gap-1 font-semibold"
               >
-                <span>Lihat Semua</span>
+                <span>View All</span>
                 <ArrowLeft className="w-3.5 h-3.5 rotate-180" />
               </Link>
             </div>

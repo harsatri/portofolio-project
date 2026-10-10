@@ -64,7 +64,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center justify-center min-w-[40px] min-h-[40px] rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 transition-transform duration-200 motion-safe:hover:scale-105"
-          aria-label="Beranda"
+          aria-label="Home"
         >
           <Logo className="h-9 sm:h-10 w-auto" alt="Logo Harsa Tri Novenda" />
         </Link>
