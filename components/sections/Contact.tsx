@@ -52,7 +52,7 @@ export default function Contact({
     },
     {
       label: "WhatsApp",
-      handle: profile.phone || "+62 851-5600-0636",
+      handle: profile.phone || "+62 851-7521-0941",
       href: whatsappHref,
       icon: WhatsappLogo,
       detail: "Instant messaging for project inquiries",
